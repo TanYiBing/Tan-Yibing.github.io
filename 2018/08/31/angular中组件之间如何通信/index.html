@@ -13,25 +13,25 @@
     
     
     
-    <title>angular数据绑定 | Ice Panpan&#39;s blog | Tan Yibing&#39;s blog</title>
+    <title>angular中组件之间如何通信 | Ice Panpan&#39;s blog | Tan Yibing&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="Angular">
-    <meta name="description" content="Angular数据绑定是Angular中最常见的，绑定的方式有单向数据绑定和双向数据绑定。单向的数据绑定通常有以下几种方式： 1.使用插值表达式将一个表达式的值显示在模板上： &amp;lt;h1&amp;gt;{{titke}}&amp;lt;/h1&amp;gt;  2.使用方括号将HTML标签的一个属性绑定到一个表达式上： &amp;lt;img [src] = &amp;quot;imgUrl&amp;quot;&amp;gt; 其实我们的属性绑定和我">
+    <meta name="description" content="在angular中，我们会设计很多的component组件，也就生成了组件树，组件之间有可能是父子组件，或者兄弟组件，或者彼此都没有关系。那么这么多组件之间该如何通讯呢？下面我们就简答的了解了解。 父子组件之间的通讯父子之间的通讯比较简单，我们需要用到@Input输入属性和@Output输出属性。当我们需要从父组件向子组件传递信息时，我们首先需要为子组件定义一个属性： export class c">
 <meta name="keywords" content="Angular">
 <meta property="og:type" content="article">
-<meta property="og:title" content="angular数据绑定">
-<meta property="og:url" content="http://tanyibing.com/2018/08/30/angular数据绑定/index.html">
+<meta property="og:title" content="angular中组件之间如何通信">
+<meta property="og:url" content="http://tanyibing.com/2018/08/31/angular中组件之间如何通信/index.html">
 <meta property="og:site_name" content="Ice Panpan&#39;s blog">
-<meta property="og:description" content="Angular数据绑定是Angular中最常见的，绑定的方式有单向数据绑定和双向数据绑定。单向的数据绑定通常有以下几种方式： 1.使用插值表达式将一个表达式的值显示在模板上： &amp;lt;h1&amp;gt;{{titke}}&amp;lt;/h1&amp;gt;  2.使用方括号将HTML标签的一个属性绑定到一个表达式上： &amp;lt;img [src] = &amp;quot;imgUrl&amp;quot;&amp;gt; 其实我们的属性绑定和我">
+<meta property="og:description" content="在angular中，我们会设计很多的component组件，也就生成了组件树，组件之间有可能是父子组件，或者兄弟组件，或者彼此都没有关系。那么这么多组件之间该如何通讯呢？下面我们就简答的了解了解。 父子组件之间的通讯父子之间的通讯比较简单，我们需要用到@Input输入属性和@Output输出属性。当我们需要从父组件向子组件传递信息时，我们首先需要为子组件定义一个属性： export class c">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-31T06:00:02.439Z">
+<meta property="og:updated_time" content="2018-08-31T09:36:02.273Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="angular数据绑定">
-<meta name="twitter:description" content="Angular数据绑定是Angular中最常见的，绑定的方式有单向数据绑定和双向数据绑定。单向的数据绑定通常有以下几种方式： 1.使用插值表达式将一个表达式的值显示在模板上： &amp;lt;h1&amp;gt;{{titke}}&amp;lt;/h1&amp;gt;  2.使用方括号将HTML标签的一个属性绑定到一个表达式上： &amp;lt;img [src] = &amp;quot;imgUrl&amp;quot;&amp;gt; 其实我们的属性绑定和我">
+<meta name="twitter:title" content="angular中组件之间如何通信">
+<meta name="twitter:description" content="在angular中，我们会设计很多的component组件，也就生成了组件树，组件之间有可能是父子组件，或者兄弟组件，或者彼此都没有关系。那么这么多组件之间该如何通讯呢？下面我们就简答的了解了解。 父子组件之间的通讯父子之间的通讯比较简单，我们需要用到@Input输入属性和@Output输出属性。当我们需要从父组件向子组件传递信息时，我们首先需要为子组件定义一个属性： export class c">
     
         <link rel="alternate" type="application/atom+xml" title="Ice Panpan&#39;s blog" href="/atom.xml">
     
@@ -126,7 +126,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">angular数据绑定</div>
+        <div class="flex-col header-title ellipsis">angular中组件之间如何通信</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -154,11 +154,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">angular数据绑定</h1>
+        <h1 class="title">angular中组件之间如何通信</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-08-30T14:56:05.000Z" itemprop="datePublished" class="page-time">
-  2018-08-30
+                <time datetime="2018-08-31T07:27:24.000Z" itemprop="datePublished" class="page-time">
+  2018-08-31
 </time>
 
 
@@ -176,14 +176,21 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#父子组件之间的通讯"><span class="post-toc-number">1.</span> <span class="post-toc-text">父子组件之间的通讯</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#中间人模式"><span class="post-toc-number">2.</span> <span class="post-toc-text">中间人模式</span></a></li></ol>
+        </nav>
+    </aside>
 
-<article id="post-angular数据绑定"
+
+<article id="post-angular中组件之间如何通信"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">angular数据绑定</h1>
+        <h1 class="post-card-title">angular中组件之间如何通信</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-08-30 22:56:05" datetime="2018-08-30T14:56:05.000Z"  itemprop="datePublished">2018-08-30</time>
+            <time class="post-time" title="2018-08-31 15:27:24" datetime="2018-08-31T07:27:24.000Z"  itemprop="datePublished">2018-08-31</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Angular/">Angular</a></li></ul>
@@ -198,60 +205,66 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Angular数据绑定是Angular中最常见的，绑定的方式有单向数据绑定和双向数据绑定。单向的数据绑定通常有以下几种方式：</p>
-<p><strong>1.使用插值表达式将一个表达式的值显示在模板上：</strong></p>
-<pre><code>&lt;h1&gt;{{titke}}&lt;/h1&gt;
-</code></pre><hr>
-<p><strong>2.使用方括号将HTML标签的一个属性绑定到一个表达式上：</strong></p>
-<pre><code>&lt;img [src] = &quot;imgUrl&quot;&gt;
-</code></pre><p>其实我们的属性绑定和我们的插值表达式是一样的，我们举个例子;</p>
-<pre><code>&lt;img [src] = &quot;imgUrl&quot;&gt;
-&lt;img src = {{imgUrl}}&gt;
-</code></pre><p>这两种写法其实都一样，插值的表达式都会被Angular转化成属性绑定。<strong>在这还有一个需要理解的东西就是HTML属性和DOM属性的区别</strong>，举个例子：</p>
-<pre><code>&lt;input value=&quot;hello&quot; (click)=&quot;doOnInput($event)&quot;&gt;
-</code></pre><p>我们的控制器定义一下我们的输入事件：</p>
-<pre><code>doOnInput(event: any) {
-    console.log(event.target.value);//打印DOM属性的值
-    console.log(event.target.getAttribute(&apos;value&apos;);//打印HTML属性的值
+            <p>在angular中，我们会设计很多的component组件，也就生成了组件树，组件之间有可能是父子组件，或者兄弟组件，或者彼此都没有关系。那么这么多组件之间该如何通讯呢？下面我们就简答的了解了解。</p>
+<h2 id="父子组件之间的通讯"><a href="#父子组件之间的通讯" class="headerlink" title="父子组件之间的通讯"></a>父子组件之间的通讯</h2><p>父子之间的通讯比较简单，我们需要用到<code>@Input输入属性</code>和<code>@Output输出属性</code>。当我们需要<strong>从父组件向子组件传递信息时</strong>，我们首先需要为子组件定义一个属性：</p>
+<pre><code>export class childComponent {
+    @Input() hero: Hero;
 }
-</code></pre><p>我们可以发现DOM属性的值是随着你改变输入的值而一直在改变的，而HTML属性的值一直是hello，因为HTML是初始化DOM属性的值的，不能改变，而DOM属性的值可以改变。</p>
-<p><strong>HTML属性和DOM属性的关系如下：</strong></p>
-<ol>
-<li>少量HTML属性和DOM属性之间有1:1的映射，比如id。</li>
-<li>有些HTML属性没有对应的DOM属性，如colspan。</li>
-<li>有些DOM属性没有对应的HTML属性，如textContent。</li>
-<li>就算名字相同，HTML属性和DOM属性也不是一样东西。</li>
-<li>HTML属性的值指定了初始值；DOM属性的值表示当前值.DOM属性的值可以改变；HTML属性的值不能改变。</li>
-<li>模板绑定是通过DOM属性和事件来工作的，而不是HTML属性。</li>
-</ol>
-<p><strong>以上是DOM属性的绑定，下面介绍下HTML属性的绑定</strong><br>简单的举个例子：</p>
-<pre><code>&lt;td [attr.colspan]={{1+1}}&gt;
-</code></pre><p>因为colspan是个DOM属性没有的HTML属性，所以我们在前面加上<code>attr</code>这个前缀来表示它是HTML属性。</p>
-<p>更多的我们可以通过<code>[ngClass]</code>或者<code>[class.classname]</code>、<code>[class]</code>这种来控制部分或者全部的类名，以此来达到控制样式的效果。<code>ngclass</code>的表达式需要接收一个对象，对象中通过<code>{cssClassName: Boolen}</code>这种键值对来表示该类是否要加上，<code>true</code>表示加上，<code>false</code>代表移除，这就是<strong>CSS类绑定</strong>。</p>
-<p>类似的，我们还可以通过<strong>css样式绑定</strong>，不过不再是<code>class</code>开头了，而是<code>style</code>开头，举个栗子：</p>
-<pre><code>&lt;div [style.color]=&quot; isDev? &apos;red&apos;: &apos;blue&apos;&quot;&gt;
-</code></pre><p>其中的<code>isDev</code>就是控制器来控制的。和上面css类绑定一样，这只是单一样式的绑定，所以我们还有个<code>[ngStyle]</code>来批量控制，它也是接受一个对象，但和css类不同的是，这个对象里面定义的是样式的键值对，例如{color: red,background: black}</p>
+</code></pre><p>被<code>@Input</code>修饰的属性就即将接受从父组件传过来的信息。具体怎么传值呢？我们在父组件中通过子组件的属性进行传值：</p>
+<pre><code>&lt;app-child [hero]=&quot;控制器中的属性值&quot;&gt;&lt;/app-child&gt;
+</code></pre><p>我们在父组件的模板中调用子组件时，只要在子组件中对<code>hero</code>属性进行绑定就行了。是不是很简单？而<strong>从子组件向父组件传值</strong>也很简单，其实就是一个反向的过程，我们需要借助EventEmitter的订阅和广播的功能就可以了，首先我们在子组件中定义要传输出去的属性值：</p>
+<pre><code>export class childComponent {
+    @Output() voted = new EventEmitter&lt;boolean&gt;();
+    didVote = false;
+
+    vote(agreed: boolean) {
+        this.voted.emit(agreed);
+        this.didVote = true;
+    }
+}
+</code></pre><p>我们将要输出的是通过EventEmitter进行实例化，然后在需要的时候触发<code>.emit(agreed)</code>事件就能将数据传出去。那接下来我们需要在父组件中进行接收：</p>
+<pre><code>&lt;app-child (voted)=&quot;onVoted($event)&quot;&gt;&lt;/app-child&gt;
+</code></pre><p>我们在父组件模板中的子组件上加上一个事件绑定，并且在父组件中定义<code>onVoted()</code>方法：</p>
+<pre><code>export class ParentComponent {
+    agreed = 0;
+    disagreed = 0;
+
+    onVoted(event: boolean) {//event就是传递过来的数据
+        agreed ? this.agreed++ : this.disagreed++;
+}
+</code></pre><p>在父组件的方法中的参数就是我们从子组件中拿到的数据。这样就成功的传递出了信息。但是需要注意的是：<strong>默认情况下父组件模板中捕获事件的名字和子组件中输出属性的名字是一样的，都是voted！！！</strong>但是我们也可以通过输出属性来重命名：</p>
+<pre><code>@Output(&apos;XXX&apos;)//这样就可以改掉输出属性的名字，同样的捕获事件的名字也要同步改过来。
+</code></pre><hr>
+<h2 id="中间人模式"><a href="#中间人模式" class="headerlink" title="中间人模式"></a>中间人模式</h2><p>父子组件之间传递数据容易实现，但是当我们的组件不是父子关系的时候我们应该怎么传递数据？这就要用到我们的中间人模式了。</p>
+<p>中间人模式最简单的一种关系就是<strong>两个组件有共同的父组件</strong>，也就是两个组件是兄弟关系。但是这个比喻不贴切，他们只是拥有共同的父组件，其实他们两之间谁都不认识谁。那么他们之间怎么通信呢？就把父组件当成中间人就行了：</p>
+<pre><code>export class childOneComponent {
+    @Output() voted = new EventEmitter&lt;boolean&gt;();
+    didVote = false;
+
+    vote(agreed: boolean) {
+        this.voted.emit(agreed);
+        this.didVote = true;
+    }
+}
+</code></pre><p>首先还是一个组件中输出一个属性，并在适当的时触发广播的行为，将我们的数据发送出去。接着需要在父组件中监听<code>voted</code>这个事件：</p>
+<pre><code>&lt;app-child-one (voted)=&quot;veteHandler($event)&quot;&gt;&lt;/app-child-one&gt;
+</code></pre><p>我们的另一个子组件需要有个输入属性：</p>
+<pre><code>export class childTwoComponent {
+    @Input() voteCount;
+}
+</code></pre><p>既然是我们的中间人，它就应该先接收它收到的数据，然后将数据再传给需要的人。这就很简单啦：</p>
+<pre><code>export class ParentComponent {
+    voteCount;
+
+    veteHandler(event: boolean) {//event就是传递过来的数据
+        this.voteCount = event;
+}
+</code></pre><p>我想你已经猜到下一步应该怎么办了，我们将父组件接受的数据传给另一个子组件就行了，怎么传？通过属性绑定来传递啊：</p>
+<pre><code>&lt;app-child-one (voted)=&quot;veteHandler($event)&quot;&gt;&lt;/app-child-one&gt;
+&lt;app-child-two [voteCount]=&quot;voteCount&quot;&gt;&lt;/app-child-two&gt;
+</code></pre><p>这样我这个中间人的职责就完成啦，成功将一个组件传递给另一个组件。而且他们两互相之间根本不知情。</p>
 <hr>
-<p><strong>3.上面这两个绑定方式都是控制器向模板传输数据，下面这种是模板向控制器传输数据，也就是事件绑定：</strong></p>
-<pre><code>&lt;button (click)=&quot;onClickEvent($event)&quot;&gt;点击执行&lt;/button&gt;
-//小括号表示这是一个事件绑定
-//小括号中的是事件的名称
-//等号后面双引号中的是事件发生时执行的表达式
-//如果处理事件的方法需要了解事件的属性，我们就可以给方法加上$event参数
-</code></pre><p>我们的事件绑定中也可以不是一个方法调用，而是一个属性赋值：</p>
-<pre><code>&lt;button (click)=&quot;saved = true&quot;&gt;
-</code></pre><p>这样我们就能够直接给控制器中的saved属性赋值为true。</p>
-<hr>
-<p><strong>接下来我们看一下最重要的双向数据绑定</strong></p>
-<blockquote>
-<p>盒子里面装香蕉</p>
-</blockquote>
-<p>这句话是官网文档上面说的，就是指<code>[(ngModel)]</code>是方括号包着小括号，其实从上面就能看出，控制器传值给模板是方括号，模板传值给控制器是小括号，两个融合到一起就是双向数据绑定了，举个栗子：</p>
-<pre><code>&lt;input [value]=&quot;currentHero.name&quot;
-       (input)=&quot;currentHero.name=$event.target.value&quot; &gt;
-</code></pre><p>下面这个而其实就是一个双向数据绑定，但是显得太过笨重，于是有了下面这种写法：</p>
-<pre><code>&lt;input [(ngModel)]=&quot;currentHero.name&quot;&gt;
-</code></pre><p>这样就能够同步输入和显示了，最常用的地方就是我们的表单元素了。</p>
+<p><strong>那么没有共同的父组件的组件之间难道就不能通讯了吗？答案肯定是不是的，我将在下一篇博客中回答！</strong></p>
 
         </div>
 
@@ -260,12 +273,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-08-31T06:00:02.439Z" itemprop="dateUpdated">2018-08-31 14:00:02</time>
+    最后更新时间：<time datetime="2018-08-31T09:36:02.273Z" itemprop="dateUpdated">2018-08-31 17:36:02</time>
 </span><br>
 
 
         
-        除特别说明外，文章均采用「知识共享 署名 - 非商业性 - 相同方式共享 4.0 协议」进行许可，转载需注明文章出处：<a href="/2018/08/30/angular数据绑定/" target="_blank" rel="external">http://tanyibing.com/2018/08/30/angular数据绑定/</a>
+        除特别说明外，文章均采用「知识共享 署名 - 非商业性 - 相同方式共享 4.0 协议」进行许可，转载需注明文章出处：<a href="/2018/08/31/angular中组件之间如何通信/" target="_blank" rel="external">http://tanyibing.com/2018/08/31/angular中组件之间如何通信/</a>
         
     </div>
     
@@ -296,7 +309,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/08/30/angular数据绑定/&title=《angular数据绑定》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/08/31/angular中组件之间如何通信/&title=《angular中组件之间如何通信》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -306,22 +319,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/08/30/angular数据绑定/&title=《angular数据绑定》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/08/31/angular中组件之间如何通信/&title=《angular中组件之间如何通信》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/08/30/angular数据绑定/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/08/31/angular中组件之间如何通信/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《angular数据绑定》 — Ice Panpan's blog&url=http://tanyibing.com/2018/08/30/angular数据绑定/&via=http://tanyibing.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《angular中组件之间如何通信》 — Ice Panpan's blog&url=http://tanyibing.com/2018/08/31/angular中组件之间如何通信/&via=http://tanyibing.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/08/30/angular数据绑定/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/08/31/angular中组件之间如何通信/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -341,21 +354,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2018/08/31/angular中组件之间如何通信/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">angular中组件之间如何通信</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/08/29/angular中如何引入第三方库/" id="post-next" class="post-nav-link">
+      <a href="/2018/08/30/angular数据绑定/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">angular中如何引入第三方库</h4>
+        <h4 class="title">angular数据绑定</h4>
       </a>
     </div>
   
@@ -476,7 +482,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/08/30/angular数据绑定/&title=《angular数据绑定》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/08/31/angular中组件之间如何通信/&title=《angular中组件之间如何通信》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -486,22 +492,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/08/30/angular数据绑定/&title=《angular数据绑定》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/08/31/angular中组件之间如何通信/&title=《angular中组件之间如何通信》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/08/30/angular数据绑定/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/08/31/angular中组件之间如何通信/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《angular数据绑定》 — Ice Panpan's blog&url=http://tanyibing.com/2018/08/30/angular数据绑定/&via=http://tanyibing.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《angular中组件之间如何通信》 — Ice Panpan's blog&url=http://tanyibing.com/2018/08/31/angular中组件之间如何通信/&via=http://tanyibing.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/08/30/angular数据绑定/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/08/31/angular中组件之间如何通信/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -512,7 +518,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACI0lEQVR42u3aS1LDMBAFQO5/6bBlgcN7I0Nhqb2igmOpk6rJfPTxEV+vt9f7+7++cvW0q3fdfGFgYDyWkWzx/bbaVa5gCfiSioGBcQDjauFk07OgeXVnsi4GBgZGHgTbRHAl+GJgYGC0jPfJZQL4FwEXAwPjUYykiG3xyX9nbAwMjNMYebPs7//+lfkGBgbGoxiv8mpbcrPWW70rDAyMrRl5gEuStrYEnSWXl0/AwMA4gJE00fLWWF4Sz0L2D7U4BgbGdow2ICaJ3WxUeVfLDwMDY1dGksblwfeusNuOGTAwMHZlzJpibZssCdD5yLMoYjEwMB7OWA9/+VbWU8botwIDA2M7Rl7XrieFs1DblrUYGBj7MdrCtQ2ySZusHYt+swcMDIyDGbOAu5IsLlXhGBgYWzPaI195UdoWwG3qiYGBcQJjZYF2qNk+oQ7KGBgYmzLyYDcra2eFbjEGyDNTDAyMhzPyQxLtuDEpa1fwGBgYJzBWMMmj26FCPuy87TvBwMB4FKNttOWBchaC68QRAwPjGMYs+csbannIbtfCwMA4jbG+zKw/lr83CrgYGBhbMF7l1fLuekL0PWBgYGzKmIXIduhYnPsoR5s1BgMD47GM/DhFOzdcGQ8kHxwGBsZpjKLqHcHyLbYFMAYGBsZS0RifhViBYWBgYLT33NVoq+/EwMA4gNEWor/djEsOZ2BgYJzDWDmp0bLbllz+YWFgYGzK+ARBTWqYPClMqQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwklEQVR42u3awW7bMBAE0Pz/T7tATykQSzO7Yt0CTyfDsSQ+BeBSs/z6io/X7+P75+/fXP9ydrX8jg8ceHh4eKOhvzuuf3NNuh7iKzhm5+Lh4eH9Hd5m+m4n+racXD/Qm7vg4eHhfZQXXe6h4SaLbDw8PLz/hddO8ck3Bx83Hh4e3jHeU3HDu2smk34bfzycteDh4eHFvFkD7LOfj/f38PDw8EZd9aRIJJP49S/zglGPFg8PD+8A7/qWSeiQDHfT0MpLQvHGgIeHh7fgta/37YR+81zjYCKPJ/74jIeHh3eMlwegm0C2ZbftsR+uiYeHh3eMN2v8n1hMt02vm2vi4eHhHeC1E+5waRtskypi2SRfafMMPDw8vJLXBhDt7duz8nEOU2o8PDy8Na+NANpgd9ZUm0W99Q4yPDw8vPU8uWmJzabsDb6OIfDw8PAe5c1e+9tzN7Fs3jD7YesVHh4e3kO8drLOG1pPBQezooKHh4d3mpcnFvniO2l6bTZvRWfh4eHhHeC1S9h8mt4Ex21MfFPA8PDw8A7wNpHuvrXfBsd5OIKHh4d3gpcPtF00Fw2qssAUbTA8PDy8w7zNgnhWGNpGVz1OPDw8vAO8drhJYyxvmLWhw76o4OHh4e150cJ0tLFgXyTaxX2UrODh4eGteZv4oG2G7bcR5P+Sm5QaDw8Pb8HbF4M9e9aviwoGHh4e3mHeprU/+2uel+SByNvdZHh4eHgP8fJItC0em9hiEzfg4eHhnea9ymP1tEZTeVJaojACDw8P7yHeZlizRlre/m+vs9qShYeHh1fykmIwu1l+bru9oIiD8fDw8I7x9mFEu1thFunWmw/w8PDwPsrLG2Z5U61dTNfRBh4eHt4/wJuVkE3Ta7XgxsPDwzvGm4URq2y4LCRtbIGHh4d3jrdp+W+W2lGUUG4j+No8Yzw8PLx73i+FvuQpWFaaHAAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
