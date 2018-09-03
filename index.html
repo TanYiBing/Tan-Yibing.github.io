@@ -199,7 +199,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Angular中每个组件都有它的生命周期，从创建、渲染，到变更检测，再到最后的销毁过程过程，Angular一共提供了九个生命周期钩子，他们按照顺序分别是：constructor、ngOnChanges、ngOnInit、ngDoCheck、ngAfterContentInit、ngAfterContentChecked、ngAfterViewInit、ngAfterViewChecked、n...
+        Angular中每个组件都有它的生命周期，从创建、渲染，到变更检测，再到最后的销毁过程过程，Angular一共提供了八个生命周期钩子，他们按照顺序分别是：constructor、ngOnChanges、ngOnInit、ngDoCheck、ngAfterContentInit、ngAfterContentChecked、ngAfterViewInit、ngAfterViewChecked、n...
     
 
         <a href="/2018/09/03/angular生命周期钩子/" class="post-more waves-effect waves-button">
@@ -246,8 +246,10 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        接着上一篇的内容，上一篇最后说到有公共父组件的组件之间是如何通信的，最后还有一个问题没有解决，那就是没有公共父组件的组件之间该怎么通信呢？
-
+        接着上一篇的内容，上一篇最后说到有公共父组件的组件之间是如何通信的，最后还有一个问题没有解决。但是在这之前我需要补充一下，父组件和子组件之间的通信还有一种方式，那就是通过本地变量或者使用@ViewChiad来进行传递，举个例子：
+export class childComponent {
+    private sayHello() {
+        console.log(&apos;H...
     
 
         <a href="/2018/09/02/angular中组件之间如何通信（二）/" class="post-more waves-effect waves-button">

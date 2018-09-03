@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="Angular">
-    <meta name="description" content="接着上一篇的内容，上一篇最后说到有公共父组件的组件之间是如何通信的，最后还有一个问题没有解决，那就是没有公共父组件的组件之间该怎么通信呢？">
+    <meta name="description" content="接着上一篇的内容，上一篇最后说到有公共父组件的组件之间是如何通信的，最后还有一个问题没有解决。但是在这之前我需要补充一下，父组件和子组件之间的通信还有一种方式，那就是通过本地变量或者使用@ViewChiad来进行传递，举个例子： export class childComponent {     private sayHello() {         console.log(&amp;apos;Hell">
 <meta name="keywords" content="Angular">
 <meta property="og:type" content="article">
 <meta property="og:title" content="angular中组件之间如何通信(二)">
 <meta property="og:url" content="http://tanyibing.com/2018/09/02/angular中组件之间如何通信（二）/index.html">
 <meta property="og:site_name" content="Ice Panpan&#39;s blog">
-<meta property="og:description" content="接着上一篇的内容，上一篇最后说到有公共父组件的组件之间是如何通信的，最后还有一个问题没有解决，那就是没有公共父组件的组件之间该怎么通信呢？">
+<meta property="og:description" content="接着上一篇的内容，上一篇最后说到有公共父组件的组件之间是如何通信的，最后还有一个问题没有解决。但是在这之前我需要补充一下，父组件和子组件之间的通信还有一种方式，那就是通过本地变量或者使用@ViewChiad来进行传递，举个例子： export class childComponent {     private sayHello() {         console.log(&amp;apos;Hell">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-03T01:37:28.999Z">
+<meta property="og:updated_time" content="2018-09-03T05:35:10.130Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="angular中组件之间如何通信(二)">
-<meta name="twitter:description" content="接着上一篇的内容，上一篇最后说到有公共父组件的组件之间是如何通信的，最后还有一个问题没有解决，那就是没有公共父组件的组件之间该怎么通信呢？">
+<meta name="twitter:description" content="接着上一篇的内容，上一篇最后说到有公共父组件的组件之间是如何通信的，最后还有一个问题没有解决。但是在这之前我需要补充一下，父组件和子组件之间的通信还有一种方式，那就是通过本地变量或者使用@ViewChiad来进行传递，举个例子： export class childComponent {     private sayHello() {         console.log(&amp;apos;Hell">
     
         <link rel="alternate" type="application/atom+xml" title="Ice Panpan&#39;s blog" href="/atom.xml">
     
@@ -198,7 +198,25 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>接着上一篇的内容，上一篇最后说到有公共父组件的组件之间是如何通信的，最后还有一个问题没有解决，那就是<strong>没有公共父组件的组件之间该怎么通信呢？</strong></p>
+            <p>接着上一篇的内容，上一篇最后说到有公共父组件的组件之间是如何通信的，最后还有一个问题没有解决。但是在这之前我需要补充一下，父组件和子组件之间的通信还有一种方式，那就是<strong>通过本地变量或者使用<code>@ViewChiad</code>来进行传递</strong>，举个例子：</p>
+<pre><code>export class childComponent {
+    private sayHello() {
+        console.log(&apos;Hello&apos;);
+    }
+}
+</code></pre><p>我在子组件中定义这样一个方法，我怎么在父组件中调用呢，一个是通过本地变量的方法：</p>
+<pre><code>&lt;app-child #child1&gt;&lt;/app-child&gt;
+&lt;button (click)=&quot;child1.syaHello()&quot;&gt;sayHello&lt;/button&gt;
+</code></pre><p>我在父组件的模板中使用子组件并加上<code>#child1</code>这个属性，然后就可以在<strong>父组件的模版中直接调用子组件的方法了</strong>。但是我们发现父组件的控制器并不能调用到这个方法，于是，我们就可以使用<code>@ViewChiad</code>：</p>
+<pre><code>export class ParentComponent {
+    @ViewChild(&apos;child1&apos;)
+    private child: ChildComponent;//声明一个子组件
+
+    sayBay() {
+        this.child.sayHello();
+    }
+}
+</code></pre><p>这样我们就实现了<strong>在父组件的控制器中调用子组件的方法</strong>。</p>
 
         </div>
 
@@ -207,7 +225,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-09-03T01:37:28.999Z" itemprop="dateUpdated">2018-09-03 09:37:28</time>
+    最后更新时间：<time datetime="2018-09-03T05:35:10.130Z" itemprop="dateUpdated">2018-09-03 13:35:10</time>
 </span><br>
 
 
