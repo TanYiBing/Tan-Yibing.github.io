@@ -19,9 +19,9 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="HTTP,URL,服务器,计算机网络,前端">
+    <meta name="keywords" content="URL,HTTP">
     <meta name="description" content="转载自www.chauncywu.com 从输入URL到页面渲染完成原文-英文译文  推荐阅读《图解HTTP》  各种协议与HTTP协议的关系(参照该图理解下文)                                                                                             0-1              1. 输入URL地">
-<meta name="keywords" content="HTTP,URL,服务器,计算机网络,前端">
+<meta name="keywords" content="URL,HTTP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从输入URL到页面渲染完成">
 <meta property="og:url" content="http://tanyibing.com/2018/02/20/从输入URL到页面渲染完成/index.html">
@@ -40,7 +40,7 @@
 <meta property="og:image" content="http://tanyibing.com/img/2017-12-20-从输入URL到页面渲染完成/3-2-2.png">
 <meta property="og:image" content="http://tanyibing.com/img/2017-12-20-从输入URL到页面渲染完成/3-2-3.jpg">
 <meta property="og:image" content="http://tanyibing.com/img/2017-12-20-从输入URL到页面渲染完成/3-3.png">
-<meta property="og:updated_time" content="2018-08-21T16:08:32.000Z">
+<meta property="og:updated_time" content="2018-09-06T02:46:55.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从输入URL到页面渲染完成">
 <meta name="twitter:description" content="转载自www.chauncywu.com 从输入URL到页面渲染完成原文-英文译文  推荐阅读《图解HTTP》  各种协议与HTTP协议的关系(参照该图理解下文)                                                                                             0-1              1. 输入URL地">
@@ -250,8 +250,7 @@
 <li>从操作系统缓存中查询。如果浏览器中没有包含想要的缓存记录，那浏览器就会发起操作系统请求，继续查询操作系统缓存</li>
 <li>从路由器中查询DNS缓存。请求持续发送到你的路由，它通常会有自己的DNS缓存。</li>
 <li>从ISP中查询DNS缓存。下一个被查询地方是ISP缓存DNS的服务器。</li>
-<li>域名服务器递归查询。首先从root域名服务器中查询如.com域名服务器，然后逐步向前查询，.com顶级域名服务器到Facebook的域名服务器。一般来说，.com级别的都已经在缓存中了，所以一般不会进行对root域名服务器的查询。下面给出一张递归查询的图。<a id="more"></a>
-<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><h4 id="什么是DNS？"><a href="#什么是DNS？" class="headerlink" title="什么是DNS？"></a>什么是DNS？</h4>DNS（Domain Name System，域名系统），因特网上作为域名和IP地址相互映射的一个分布式数据库，能够使用户更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。通过主机名，最终得到该主机名对应的IP地址的过程叫做域名解析（或主机名解析）。</li>
+<li>域名服务器递归查询。首先从root域名服务器中查询如.com域名服务器，然后逐步向前查询，.com顶级域名服务器到Facebook的域名服务器。一般来说，.com级别的都已经在缓存中了，所以一般不会进行对root域名服务器的查询。下面给出一张递归查询的图。<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><h4 id="什么是DNS？"><a href="#什么是DNS？" class="headerlink" title="什么是DNS？"></a>什么是DNS？</h4>DNS（Domain Name System，域名系统），因特网上作为域名和IP地址相互映射的一个分布式数据库，能够使用户更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。通过主机名，最终得到该主机名对应的IP地址的过程叫做域名解析（或主机名解析）。</li>
 </ol>
 <h4 id="DNS查询的两种方式：递归查询和迭代查询"><a href="#DNS查询的两种方式：递归查询和迭代查询" class="headerlink" title="DNS查询的两种方式：递归查询和迭代查询"></a>DNS查询的两种方式：递归查询和迭代查询</h4><h5 id="1、递归解析"><a href="#1、递归解析" class="headerlink" title="1、递归解析"></a>1、递归解析</h5><p>当局部DNS服务器自己不能回答客户机的DNS查询时，它就需要向其他DNS服务器进行查询。<br>此时有两种方式，如图所示的是递归方式。<br>局部DNS服务器自己负责向其他DNS服务器进行查询，一般是先向该域名的根域服务器查询，再由根域名服务器一级级向下查询。<br>最后得到的查询结果返回给局部DNS服务器，再由局部DNS服务器返回给客户端。</p>
 <figure class="image-bubble">
@@ -388,7 +387,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-08-21T16:08:32.000Z" itemprop="dateUpdated">2018-08-22 00:08:32</time>
+    最后更新时间：<time datetime="2018-09-06T02:46:55.518Z" itemprop="dateUpdated">2018-09-06 10:46:55</time>
 </span><br>
 
 
@@ -414,7 +413,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/URL/">URL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机网络/">计算机网络</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/URL/">URL</a></li></ul>
 
 
             
@@ -434,12 +433,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/02/20/从输入URL到页面渲染完成/&title=《从输入URL到页面渲染完成》 — Ice Panpan's blog&source=转载自www.chauncywu.com
-从输入URL到页面渲染完成原文-英文译文
-
-推荐阅读《图解HTTP》
-
-各种协议与HTTP协议的关系(参照该图理..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/02/20/从输入URL到页面渲染完成/&title=《从输入URL到页面渲染完成》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -619,12 +613,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/02/20/从输入URL到页面渲染完成/&title=《从输入URL到页面渲染完成》 — Ice Panpan's blog&source=转载自www.chauncywu.com
-从输入URL到页面渲染完成原文-英文译文
-
-推荐阅读《图解HTTP》
-
-各种协议与HTTP协议的关系(参照该图理..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/02/20/从输入URL到页面渲染完成/&title=《从输入URL到页面渲染完成》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

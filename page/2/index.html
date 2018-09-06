@@ -171,6 +171,56 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-全屏遮罩播放视频"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-08-23 16:48:28" datetime="2018-08-23T08:48:28.000Z"  itemprop="datePublished">2018-08-23</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/CSS/">CSS</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/08/23/全屏遮罩播放视频/">全屏遮罩播放视频</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        接着上一篇的内容，现在我播放视频不希望跳转到一个新的视频播放页面这么麻烦了，我想要通过点击直接在本页面进行播放。最后决定的是在全屏加上一个遮罩，视频控制住在屏幕的正中央进行播放。直接上我的代码吧：
+&lt;div class=&quot;box-mask&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box&quot;&gt;
+&lt;input  cl...
+    
+
+        <a href="/2018/08/23/全屏遮罩播放视频/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-静态页面之间传值"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -653,85 +703,6 @@ https://ng.ant.design/docs/getting-started/zh
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/session/">session</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-从输入URL到页面渲染完成"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-02-20 18:09:24" datetime="2018-02-20T10:09:24.000Z"  itemprop="datePublished">2018-02-20</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/HTTP/">HTTP</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/02/20/从输入URL到页面渲染完成/">从输入URL到页面渲染完成</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        转载自www.chauncywu.com
-从输入URL到页面渲染完成原文-英文译文
-
-推荐阅读《图解HTTP》
-
-各种协议与HTTP协议的关系(参照该图理解下文)
-                
-                    
-                    
-                
-                0-1
-            
-1. 输入URL地址
-                
-                    
-                    
-                
-                1-1
-            
-2. 浏览器根据域名查询IP地址
-                
-                    
-                    
-                
-                2-1
-            
-从要访问的域名中获取IP地址，DNS查询的步骤如下：
-
-从浏览器缓存中查询。浏览器会存储一定时间的DNS记录，操作系统不会告诉浏览器每个DNS记录的保存时限，不同浏览器设置保存时限为一个固定值（不同浏览器情况不同，一般在2-30分钟）。
-从操作系统缓存中查询。如果浏览器中没有包含想要的缓存记录，那浏览器就会发起操作系统请求，继续查询操作系统缓存
-从路由器中查询DNS缓存。请求持续发送到你的路由，它通常会有自己的DNS缓存。
-从ISP中查询DNS缓存。下一个被查询地方是ISP缓存DNS的服务器。
-域名服务器递归查询。首先从root域名服务器中查询如.com域名服务器，然后逐步向前查询，.com顶级域名服务器到Facebook的域名服务器。一般来说，.com级别的都已经在缓存中了，所以一般不会进行对root域名服务器的查询。下面给出一张递归查询的图。
-    
-
-        <a href="/2018/02/20/从输入URL到页面渲染完成/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/URL/">URL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机网络/">计算机网络</a></li></ul>
 
     </div>
     
