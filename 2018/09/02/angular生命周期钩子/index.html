@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://tanyibing.com/img/angular/4.png">
 <meta property="og:image" content="http://tanyibing.com/img/angular/5.png">
-<meta property="og:updated_time" content="2018-09-03T06:38:24.304Z">
+<meta property="og:updated_time" content="2018-09-07T01:54:26.736Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="angular生命周期钩子">
 <meta name="twitter:description" content="Angular中每个组件都有它的生命周期，从创建、渲染，到变更检测，再到最后的销毁过程过程，Angular一共提供了八个生命周期钩子，他们按照顺序分别是：constructor、ngOnChanges、ngOnInit、ngDoCheck、ngAfterContentInit、ngAfterContentChecked、ngAfterViewInit、ngAfterViewChecked、ngOn">
@@ -218,8 +218,8 @@
                 <div class="image-caption"></div>
             </figure>
 </blockquote>
-<p>其中红色的表示只调用一次，绿色的则可以被多次调用。我们将介绍其中重要的几个方法。</p>
-<h4 id="ngOnChanges"><a href="#ngOnChanges" class="headerlink" title="ngOnChanges:"></a>ngOnChanges:</h4><p>这个钩子在父组件初始化或修改子组件的<strong>输入属性</strong>时会被调用。想要理解这个方法为什么会被调用或不被调用，我们需要了解<code>可变对象</code>和<code>不可变对象</code>，在js中，字符串是不可变对象，但一个对象是一个可变对象，至于为什么，请自行百度。最后的结论是：<br><strong>当输入属性是可变对象例如对象时，对象的属性发生变化并不会触发<code>ngOnChanges</code>方法；当输入属性是不可变对象例如字符串时，字符串改变会触发<code>ngOnChanges</code>方法</strong>。<br><em>还需要注意一点就是</em>：<br><strong><code>ngOnChanges</code>方法首次调用一定是发生在<code>ngOninit</code>方法之前的。</strong></p>
+<p>其中红色的表示只调一次，绿色的则可以被多次调用。我们将介绍其中重要的几个方法。</p>
+<h4 id="ngOnChanges"><a href="#ngOnChanges" class="headerlink" title="ngOnChanges:"></a>ngOnChanges:</h4><p>这个钩子在父组件初始化或修改子组件的<strong>输入属性</strong>时会被调用。想要理解这个方法为什么会被调用或不被调用，我们需要了解<code>可变对象</code>和<code>不可变对象</code>，在js中，字符串是不可变对象，但一个对象是一个可变对象，至于为什么，请自行百度。最后的结论是：<br><strong>当输入属性是变对象例如对象时，对象的属性发生变化并不会触发<code>ngOnChanges</code>方法；当输入属性是不可变对象例如字符串时，字符串改变会触发<code>ngOnChanges</code>方法</strong>。<br><em>还需要注意一点就是</em>：<br><strong><code>ngOnChanges</code>方法首次调用一定是发生在<code>ngOninit</code>方法之前的。</strong></p>
 <h4 id="ngDoCheck"><a href="#ngDoCheck" class="headerlink" title="ngDoCheck:"></a>ngDoCheck:</h4><p>变更检测可以说是Angular中最复杂的模块：</p>
 <blockquote>
 <figure class="image-bubble">
@@ -266,7 +266,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-09-03T06:38:24.304Z" itemprop="dateUpdated">2018-09-03 14:38:24</time>
+    最后更新时间：<time datetime="2018-09-07T01:54:26.736Z" itemprop="dateUpdated">2018-09-07 09:54:26</time>
 </span><br>
 
 
