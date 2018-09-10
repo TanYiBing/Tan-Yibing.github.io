@@ -20,19 +20,19 @@
     
     
     <meta name="keywords" content="Angular,Typescript">
-    <meta name="description" content="RxJS简介刚开始接触angular的时候就发现，RxJS在angular中是使用的最多的框架。它的全称是：Reactive Extension。这套框架其实是源自于微软，微软在2011年就已经开发出这套框架了，但真正火起来是在NetFlix的时候，支持很多语言的一套响应式编程的框架，感兴趣可以去它的官网看看：reactivex.io，支持了这么多语言！！！">
+    <meta name="description" content="RxJS简介刚开始接触angular的时候就发现，RxJS在angular中是使用的最多的框架。它的全称是：Reactive Extension。这套框架其实是源自于微软，微软在2011年就已经开发出这套框架了，但真正火起来是在NetFlix，支持很多语言的一套响应式编程的框架，感兴趣可以去它的官网看看：reactivex.io，支持了这么多语言！！！">
 <meta name="keywords" content="Angular,Typescript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初入RxJS">
 <meta property="og:url" content="http://tanyibing.com/2018/09/10/初入RxJS/index.html">
 <meta property="og:site_name" content="Ice Panpan&#39;s blog">
-<meta property="og:description" content="RxJS简介刚开始接触angular的时候就发现，RxJS在angular中是使用的最多的框架。它的全称是：Reactive Extension。这套框架其实是源自于微软，微软在2011年就已经开发出这套框架了，但真正火起来是在NetFlix的时候，支持很多语言的一套响应式编程的框架，感兴趣可以去它的官网看看：reactivex.io，支持了这么多语言！！！">
+<meta property="og:description" content="RxJS简介刚开始接触angular的时候就发现，RxJS在angular中是使用的最多的框架。它的全称是：Reactive Extension。这套框架其实是源自于微软，微软在2011年就已经开发出这套框架了，但真正火起来是在NetFlix，支持很多语言的一套响应式编程的框架，感兴趣可以去它的官网看看：reactivex.io，支持了这么多语言！！！">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://tanyibing.com/img/angular/12.png">
-<meta property="og:updated_time" content="2018-09-10T03:30:09.045Z">
+<meta property="og:updated_time" content="2018-09-10T09:04:15.382Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初入RxJS">
-<meta name="twitter:description" content="RxJS简介刚开始接触angular的时候就发现，RxJS在angular中是使用的最多的框架。它的全称是：Reactive Extension。这套框架其实是源自于微软，微软在2011年就已经开发出这套框架了，但真正火起来是在NetFlix的时候，支持很多语言的一套响应式编程的框架，感兴趣可以去它的官网看看：reactivex.io，支持了这么多语言！！！">
+<meta name="twitter:description" content="RxJS简介刚开始接触angular的时候就发现，RxJS在angular中是使用的最多的框架。它的全称是：Reactive Extension。这套框架其实是源自于微软，微软在2011年就已经开发出这套框架了，但真正火起来是在NetFlix，支持很多语言的一套响应式编程的框架，感兴趣可以去它的官网看看：reactivex.io，支持了这么多语言！！！">
 <meta name="twitter:image" content="http://tanyibing.com/img/angular/12.png">
     
         <link rel="alternate" type="application/atom+xml" title="Ice Panpan&#39;s blog" href="/atom.xml">
@@ -181,7 +181,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#RxJS"><span class="post-toc-number">1.</span> <span class="post-toc-text">RxJS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">简介</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#RxJS"><span class="post-toc-number">1.</span> <span class="post-toc-text">RxJS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Observable"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Observable</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Observable的性质"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Observable的性质</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Observable的冷和热"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">Observable的冷和热</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -207,7 +207,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="RxJS"><a href="#RxJS" class="headerlink" title="RxJS"></a>RxJS</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>刚开始接触angular的时候就发现，RxJS在angular中是使用的最多的框架。它的全称是：<code>Reactive Extension</code>。这套框架其实是源自于微软，微软在2011年就已经开发出这套框架了，但真正火起来是在NetFlix的时候，支持很多语言的一套响应式编程的框架，感兴趣可以去它的官网看看：<a href="reactivex.io">reactivex.io</a>，支持了这么多语言！！！</p>
+            <h1 id="RxJS"><a href="#RxJS" class="headerlink" title="RxJS"></a>RxJS</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>刚开始接触angular的时候就发现，RxJS在angular中是使用的最多的框架。它的全称是：<code>Reactive Extension</code>。这套框架其实是源自于微软，微软在2011年就已经开发出这套框架了，但真正火起来是在NetFlix，支持很多语言的一套响应式编程的框架，感兴趣可以去它的官网看看：<a href="reactivex.io">reactivex.io</a>，支持了这么多语言！！！</p>
 <blockquote>
 <figure class="image-bubble">
                 <div class="img-lightbox">
@@ -217,6 +217,34 @@
                 <div class="image-caption"></div>
             </figure>
 </blockquote>
+<p>它的优势在于：<code>在思考的维度上加上时间考量。</code>，这也是一个问题，导致更难理解！</p>
+<h2 id="Observable"><a href="#Observable" class="headerlink" title="Observable"></a>Observable</h2><h3 id="Observable的性质"><a href="#Observable的性质" class="headerlink" title="Observable的性质"></a>Observable的性质</h3><p>Observable有三种状态，分别是：</p>
+<ul>
+<li><code>next</code>：必要。用来处理每个送达值。在开始执行后可能执行零次或多次。</li>
+<li><code>error</code>：可选。用来处理错误通知。错误会中断这个可观察对象实例的执行过程。</li>
+<li><code>complete</code>：可选。用来处理执行完毕（complete）通知。当执行完毕后，这些值就会继续传给下一个处理器。 </li>
+</ul>
+<p>还有特殊的Observable：<code>永不结束的</code>、<code>Never</code>、<code>Empty（结束但不发射）</code>、<code>Throw</code></p>
+<p>本来是想写介绍点操作符的，但是我发现没啥意思，反正文档都能查到，那就记录点自己对Observable的理解吧，具体操作符到时候查api。<br>其实Observable就是将数据以流的形式来进行处理，可以理解成node中的流，我们可以对流进行一系列的操作，最后我们再订阅这个流，对流里面的数据进行使用。</p>
+<p>举个例子吧:</p>
+<pre><code>const a: Array&lt;number&gt; = [1, 2, 3, 4];
+const a$ = Rx.Observable.from(a).pipe(map( val =&gt; val * val));
+const observer = {
+    next: (val) =&gt; console.log(val);
+    error： (err) =&gt; console.log(err);
+    complete: () =&gt; console.log(`everything is completed`);
+}
+a$.subscribe(observer);
+</code></pre><p>上面的例子会打印出：</p>
+<blockquote>
+<p>1 4 9 16</p>
+</blockquote>
+<p>因为我们对流中的数据进行了map操作，使它们自己乘以自己。这就是对流的一个简单处理，连<code>pipe</code>方法都和node中的流一样。</p>
+<h3 id="Observable的冷和热"><a href="#Observable的冷和热" class="headerlink" title="Observable的冷和热"></a>Observable的冷和热</h3><p>Observable有两种，一种是冷的，一种是热的。怎么去理解呢？<strong>下面的内容在angular的官网上并没有说明</strong></p>
+<ul>
+<li>冷的就是表示，每次你订阅之后我们都会从头执行一遍，就像看重播一样，点击之后都是重头开始播放；</li>
+<li>热代表每次订阅之后大家之间的进度是一样的，就像看直播一样，打开之后都是最新时刻的通知。</li>
+</ul>
 
         </div>
 
@@ -225,7 +253,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-09-10T03:30:09.045Z" itemprop="dateUpdated">2018-09-10 11:30:09</time>
+    最后更新时间：<time datetime="2018-09-10T09:04:15.382Z" itemprop="dateUpdated">2018-09-10 17:04:15</time>
 </span><br>
 
 
