@@ -13,27 +13,25 @@
     
     
     
-    <title>初入RxJS | Ice Panpan&#39;s blog | Tan Yibing&#39;s blog</title>
+    <title>Promise对象 | Ice Panpan&#39;s blog | Tan Yibing&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Angular,Typescript">
-    <meta name="description" content="RxJS简介刚开始接触angular的时候就发现，RxJS在angular中是使用的最多的框架。它的全称是：Reactive Extension。这套框架其实是源自于微软，微软在2011年就已经开发出这套框架了，但真正火起来是在NetFlix，支持很多语言的一套响应式编程的框架，感兴趣可以去它的官网看看：reactivex.io，支持了这么多语言！！！">
-<meta name="keywords" content="Angular,Typescript">
+    <meta name="keywords" content="JavaScript,ECMAScript6">
+    <meta name="description" content="Promise对象Promise的介绍Promise在ECMAScript6中被正式写进了语言标准，这是异步编程的一种解决方案，较之传统的函数回调和事件，Promise来得更加强大。Promise被理解成一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。Promise有三个状态，分别是：  pending：进行中 fulfilled：已成功 rejected：已失败  这三个">
+<meta name="keywords" content="JavaScript,ECMAScript6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初入RxJS">
-<meta property="og:url" content="http://tanyibing.com/2018/09/10/初入RxJS/index.html">
+<meta property="og:title" content="Promise对象">
+<meta property="og:url" content="http://tanyibing.com/2018/09/11/Promise对象/index.html">
 <meta property="og:site_name" content="Ice Panpan&#39;s blog">
-<meta property="og:description" content="RxJS简介刚开始接触angular的时候就发现，RxJS在angular中是使用的最多的框架。它的全称是：Reactive Extension。这套框架其实是源自于微软，微软在2011年就已经开发出这套框架了，但真正火起来是在NetFlix，支持很多语言的一套响应式编程的框架，感兴趣可以去它的官网看看：reactivex.io，支持了这么多语言！！！">
+<meta property="og:description" content="Promise对象Promise的介绍Promise在ECMAScript6中被正式写进了语言标准，这是异步编程的一种解决方案，较之传统的函数回调和事件，Promise来得更加强大。Promise被理解成一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。Promise有三个状态，分别是：  pending：进行中 fulfilled：已成功 rejected：已失败  这三个">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://tanyibing.com/img/angular/12.png">
-<meta property="og:updated_time" content="2018-09-10T09:15:42.878Z">
+<meta property="og:updated_time" content="2018-09-11T08:56:57.739Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初入RxJS">
-<meta name="twitter:description" content="RxJS简介刚开始接触angular的时候就发现，RxJS在angular中是使用的最多的框架。它的全称是：Reactive Extension。这套框架其实是源自于微软，微软在2011年就已经开发出这套框架了，但真正火起来是在NetFlix，支持很多语言的一套响应式编程的框架，感兴趣可以去它的官网看看：reactivex.io，支持了这么多语言！！！">
-<meta name="twitter:image" content="http://tanyibing.com/img/angular/12.png">
+<meta name="twitter:title" content="Promise对象">
+<meta name="twitter:description" content="Promise对象Promise的介绍Promise在ECMAScript6中被正式写进了语言标准，这是异步编程的一种解决方案，较之传统的函数回调和事件，Promise来得更加强大。Promise被理解成一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。Promise有三个状态，分别是：  pending：进行中 fulfilled：已成功 rejected：已失败  这三个">
     
         <link rel="alternate" type="application/atom+xml" title="Ice Panpan&#39;s blog" href="/atom.xml">
     
@@ -128,7 +126,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">初入RxJS</div>
+        <div class="flex-col header-title ellipsis">Promise对象</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -156,15 +154,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">初入RxJS</h1>
+        <h1 class="title">Promise对象</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-09-10T03:21:19.000Z" itemprop="datePublished" class="page-time">
-  2018-09-10
+                <time datetime="2018-09-11T08:07:08.000Z" itemprop="datePublished" class="page-time">
+  2018-09-11
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Angular/">Angular</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ECMAScript6/">ECMAScript6</a></li></ul>
 
             
         </h5>
@@ -181,21 +179,21 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#RxJS"><span class="post-toc-number">1.</span> <span class="post-toc-text">RxJS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Observable"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Observable</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Observable的性质"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Observable的性质</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Observable的冷和热"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">Observable的冷和热</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Promise对象"><span class="post-toc-number">1.</span> <span class="post-toc-text">Promise对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Promise的介绍"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Promise的介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Promise的使用"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Promise的使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">创建</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#then方法的使用"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">then方法的使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Promise执行顺序"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">Promise执行顺序</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Promise和其他技术"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Promise和其他技术</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Promise的应用"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Promise的应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#加载图片"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">加载图片</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-初入RxJS"
+<article id="post-Promise对象"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">初入RxJS</h1>
+        <h1 class="post-card-title">Promise对象</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-09-10 11:21:19" datetime="2018-09-10T03:21:19.000Z"  itemprop="datePublished">2018-09-10</time>
+            <time class="post-time" title="2018-09-11 16:07:08" datetime="2018-09-11T08:07:08.000Z"  itemprop="datePublished">2018-09-11</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Angular/">Angular</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ECMAScript6/">ECMAScript6</a></li></ul>
 
 
 
@@ -207,46 +205,89 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="RxJS"><a href="#RxJS" class="headerlink" title="RxJS"></a>RxJS</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>刚开始接触angular的时候就发现，RxJS在angular中是使用的最多的框架。它的全称是：<code>Reactive Extension</code>。这套框架其实是源自于微软，微软在2011年就已经开发出这套框架了，但真正火起来是在NetFlix，支持很多语言的一套响应式编程的框架，感兴趣可以去它的官网看看：<a href="reactivex.io">reactivex.io</a>，支持了这么多语言！！！</p>
-<blockquote>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/img/angular/12.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-</blockquote>
-<p>它的优势在于：<code>在思考的维度上加上时间考量。</code>，这也是一个问题，导致更难理解！</p>
-<h2 id="Observable"><a href="#Observable" class="headerlink" title="Observable"></a>Observable</h2><h3 id="Observable的性质"><a href="#Observable的性质" class="headerlink" title="Observable的性质"></a>Observable的性质</h3><p>Observable有三种状态，分别是：</p>
+            <h1 id="Promise对象"><a href="#Promise对象" class="headerlink" title="Promise对象"></a>Promise对象</h1><h2 id="Promise的介绍"><a href="#Promise的介绍" class="headerlink" title="Promise的介绍"></a>Promise的介绍</h2><p><code>Promise</code>在<code>ECMAScript6</code>中被正式写进了语言标准，这是异步编程的一种解决方案，较之传统的函数回调和事件，<code>Promise</code>来得更加强大。<br><code>Promise</code>被理解成一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。<br><code>Promise</code>有三个状态，分别是：</p>
 <ul>
-<li><code>next</code>：必要。用来处理每个送达值。在开始执行后可能执行零次或多次。</li>
-<li><code>error</code>：可选。用来处理错误通知。错误会中断这个可观察对象实例的执行过程。</li>
-<li><code>complete</code>：可选。用来处理执行完毕（complete）通知。当执行完毕后，这些值就会继续传给下一个处理器。 </li>
+<li><code>pending</code>：进行中</li>
+<li><code>fulfilled</code>：已成功</li>
+<li><code>rejected</code>：已失败</li>
 </ul>
-<p>还有特殊的Observable：<code>永不结束的</code>、<code>Never</code>、<code>Empty（结束但不发射）</code>、<code>Throw</code></p>
-<p>本来是想写介绍点操作符的，但是我发现没啥意思，反正文档都能查到，那就记录点自己对Observable的理解吧，具体操作符到时候查api。<br>其实Observable就是将数据以流的形式来进行处理，可以理解成node中的流，我们可以对流进行一系列的操作，最后我们再订阅这个流，对流里面的数据进行使用。</p>
-<p>举个例子吧:</p>
-<pre><code>const a: Array&lt;number&gt; = [1, 2, 3, 4];
-const a$ = Rx.Observable.from(a).pipe(map( val =&gt; val * val));
-const observer = {
-    next: (val) =&gt; console.log(val);
-    error： (err) =&gt; console.log(err);
-    complete: () =&gt; console.log(`everything is completed`);
-}
-a$.subscribe(observer);
-</code></pre><p>上面的例子会打印出：</p>
-<blockquote>
-<p>1 4 9 16</p>
-</blockquote>
-<p>因为我们对流中的数据进行了map操作，使它们自己乘以自己。这就是对流的一个简单处理，连<code>pipe</code>方法都和node中的流一样。</p>
-<h3 id="Observable的冷和热"><a href="#Observable的冷和热" class="headerlink" title="Observable的冷和热"></a>Observable的冷和热</h3><p>Observable有两种，一种是冷的，一种是热的。怎么去理解呢？<strong>下面的内容在angular的官网上并没有说明</strong></p>
-<ul>
-<li>冷的就是表示，每次你订阅之后我们都会从头执行一遍，就像看重播一样，点击之后都是重头开始播放；</li>
-<li>热代表每次订阅之后大家之间的进度是一样的，就像看直播一样，打开之后都是最新时刻的通知。</li>
-</ul>
-<p>未完待续。</p>
+<p>这三个状态是根据异步操作的结果来决定的，任何其他操作都无法改变这个状态。这也是Promise这个名字的由来，它的英语意思就是“承诺”，表示其他手段无法改变。这三个状态一旦确定就不会在改变了。</p>
+<h2 id="Promise的使用"><a href="#Promise的使用" class="headerlink" title="Promise的使用"></a>Promise的使用</h2><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p>怎么创建一个Promise实例呢：</p>
+<pre><code>const promise = new Promise(function(resolve, reject) {
+    // ... some code
 
+    if (/* 异步操作成功 */){
+        resolve(value);
+    } else {
+        reject(error);
+    }
+});
+</code></pre><p>其中两个方法，<code>resolve</code>用来处理异步操作成功的结果，将其结果传递出去，在后面的<code>then</code>方法中去接受，<code>reject</code>用来处理操作失败的结果并传递出去，也可用<code>then</code>方法接收。</p>
+<h3 id="then方法的使用"><a href="#then方法的使用" class="headerlink" title="then方法的使用"></a>then方法的使用</h3><p><code>Promise</code>实例生成以后，可以用then方法分别指定resolved状态和rejected状态的回调函数：</p>
+<pre><code>promise.then(function(value) {
+    // success
+}, function(error) {
+    // failure
+});
+</code></pre><p>其中第二个函数是可选的。这两个函数就是用来接收上面传出来的结果的。而且需要注意的是<strong>then方法返回是一个新的Promise，也就是说我们可以进行链式编程。</strong></p>
+<h3 id="Promise执行顺序"><a href="#Promise执行顺序" class="headerlink" title="Promise执行顺序"></a>Promise执行顺序</h3><p><code>Promise</code>在新建之后就会立即执行，举个例子：</p>
+<pre><code>let promise = new Promise(function(resolve, reject) {
+    console.log(&apos;a&apos;);
+    resolve();
+});
+
+promise.then(function() {
+    console.log(&apos;b&apos;);
+});
+
+console.log(&apos;c&apos;);
+
+// a
+// c
+// b
+</code></pre><p>上面的代码先输出a，因为Promise新建之后就立即执行，<code>then</code>方法在当前脚本所有同步任务执行完才执行，最后才会输出b。</p>
+<h2 id="Promise和其他技术"><a href="#Promise和其他技术" class="headerlink" title="Promise和其他技术"></a>Promise和其他技术</h2><p>昨天我看了RxJS，发现这两货好像有点像，一个是把所有数据都变成流进行操作。一个是一直返回<code>Promise</code>，通过<code>then</code>方法一直链式操作，那就比较一下吧。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作</th>
+<th>可观察对象</th>
+<th>承诺</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">创建</td>
+<td>new Observable((observer) =&gt; {observer.next(123);});</td>
+<td>new Promise((resolve, reject) =&gt; {resolve(123);});</td>
+</tr>
+<tr>
+<td style="text-align:center">转换</td>
+<td>obs.map((value) =&gt; value * 2 );</td>
+<td>promise.then((value) =&gt; value * 2);</td>
+</tr>
+<tr>
+<td style="text-align:center">订阅</td>
+<td>sub = obs.subscribe((value) =&gt; {console.log(value)});</td>
+<td>promise.then((value) =&gt; {console.log(value);});</td>
+</tr>
+<tr>
+<td style="text-align:center">取消订阅</td>
+<td>sub.unsubscribe();</td>
+<td>承诺被解析时隐式完成。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Promise的应用"><a href="#Promise的应用" class="headerlink" title="Promise的应用"></a>Promise的应用</h2><h3 id="加载图片"><a href="#加载图片" class="headerlink" title="加载图片"></a>加载图片</h3><p>我们可以将图片的加载写成一个Promise，一旦加载完成，Promise的状态就发生变化。</p>
+<pre><code>const preloadImage = function (path) {
+    return new Promise(function (resolve, reject) {
+        const image = new Image();
+        image.onload  = resolve;
+        image.onerror = reject;
+        image.src = path;
+    });
+};
+</code></pre>
         </div>
 
         <blockquote class="post-copyright">
@@ -254,12 +295,12 @@ a$.subscribe(observer);
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-09-10T09:15:42.878Z" itemprop="dateUpdated">2018-09-10 17:15:42</time>
+    最后更新时间：<time datetime="2018-09-11T08:56:57.739Z" itemprop="dateUpdated">2018-09-11 16:56:57</time>
 </span><br>
 
 
         
-        除特别说明外，文章均采用「知识共享 署名 - 非商业性 - 相同方式共享 4.0 协议」进行许可，转载需注明文章出处：<a href="/2018/09/10/初入RxJS/" target="_blank" rel="external">http://tanyibing.com/2018/09/10/初入RxJS/</a>
+        除特别说明外，文章均采用「知识共享 署名 - 非商业性 - 相同方式共享 4.0 协议」进行许可，转载需注明文章出处：<a href="/2018/09/11/Promise对象/" target="_blank" rel="external">http://tanyibing.com/2018/09/11/Promise对象/</a>
         
     </div>
     
@@ -280,7 +321,7 @@ a$.subscribe(observer);
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Typescript/">Typescript</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECMAScript6/">ECMAScript6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
 
             
@@ -290,7 +331,7 @@ a$.subscribe(observer);
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/10/初入RxJS/&title=《初入RxJS》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/11/Promise对象/&title=《Promise对象》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -300,22 +341,22 @@ a$.subscribe(observer);
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/10/初入RxJS/&title=《初入RxJS》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/11/Promise对象/&title=《Promise对象》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/10/初入RxJS/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/11/Promise对象/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《初入RxJS》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/10/初入RxJS/&via=http://tanyibing.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Promise对象》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/11/Promise对象/&via=http://tanyibing.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/10/初入RxJS/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/11/Promise对象/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -335,21 +376,14 @@ a$.subscribe(observer);
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2018/09/11/Promise对象/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Promise对象</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/09/07/angular动画/" id="post-next" class="post-nav-link">
+      <a href="/2018/09/10/初入RxJS/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">angular动画</h4>
+        <h4 class="title">初入RxJS</h4>
       </a>
     </div>
   
@@ -470,7 +504,7 @@ a$.subscribe(observer);
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/10/初入RxJS/&title=《初入RxJS》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/11/Promise对象/&title=《Promise对象》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -480,22 +514,22 @@ a$.subscribe(observer);
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/10/初入RxJS/&title=《初入RxJS》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/11/Promise对象/&title=《Promise对象》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/10/初入RxJS/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/11/Promise对象/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《初入RxJS》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/10/初入RxJS/&via=http://tanyibing.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Promise对象》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/11/Promise对象/&via=http://tanyibing.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/10/初入RxJS/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/11/Promise对象/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -506,7 +540,7 @@ a$.subscribe(observer);
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3aQXKDMAwF0N7/0uk2My3wJcEC+7HKJMH4ZaFIln5+4uvzdX2/c/7p3+vo3qN1br4wMDBey/icXsl3ju4633T1Bzp/CgYGxg6MowiWbOXeMFp9FgYGBkY1UPZC8OQnw8DAwDj/Tr5ONQXEwMDA6BWxSdC8KDXjUP5gLY6BgfFCxqSwfPr1I/0NDAyMVzF6x/3VBkD1oK28KwwMjKUZ1QK1d+iWrzbaDwYGxtKMyUbzx/QO1/JdYWBgrM3oHWD1Rigm418X6SYGBsbSjHnz8q5D/+rTL/aGgYGxEKPadMy3eFdAj5AYGBiLMiYDW3nyNx/LKE+LYGBgLMdIYPmivdZmDv5nZQwMjA0Y1R5CXnDmIfjmmREMDIyFGNVQmx+0VUvT6mqHn2JgYCzK6B3N90Jn0kioppsYGBj7MKrBNB+PyNPH0YAFBgbGNoxkK72SNU/18rswMDD2YfRKx17Araaevb8HDAyMtRl5mVotQfMAmo9fYGBg7MO47cCrNbSRNy8vgi8GBsY2jPPUbV7K9jK66NANAwNjG0ZSjvYK17wZ0BzUwMDAWJTRGxWdD6r2it7D1TAwMJZmPJGo9cbIqolps8GJgYHxWkY1yOaJ4/wwDgMDA2MS+Hpl7XyE4qKUxcDAwIjHxZLCtVoqX7AxMDAwWs3LCbL8LAwMjA0Y1cZknvD1GgblxicGBsbSjLx0TLZSTQ3zgjYHY2BgLMT4BRtsIuDb7mS1AAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACO0lEQVR42u3aQZKDMAwF0dz/0sw2VYNJf8ksbDcrihDwY6GSJX0++Li+jv/Xyf38fPTMCYcMGTKWZVyPx+geguEfgsCe1yBDhowTGKMXP5/z5aaRk69NhgwZMkb3kADNQ236yWTIkCGjw3gGkCRPhgwZMjqbWF7pImkfCc2v7MVlyJCxIKOzsXz7/JX+hgwZMpZiXOGRhlqSLKbNgJs3ypAhY2vGrAZkZ+tbC7gyZMg4h5EWvPgQRm10g4Ts4jeWIUPG4oy0SUCSudoGmFy5ebIMGTIOYLzXEkg3wzzUBntxGTJkbMGovbI2ftFvCQyrhjJkyNiUQZbI07W0eVBrEsRNTRkyZCzOSBPBzvxDWkQLtrUyZMg4kpFuYtNyf3G5vIUpQ4aMTRlpUWxuME0LcDfTIjJkyDiAQWC14MtL/3z4LEgNZciQsTgjfVwnpav9ioYtZMiQsTWDjFnwF/BAOaskh2Y6ZMiQsTgjTdrIv2pbVjKK8ePTyJAh4xhGp6xfC821+29WJUOGjGMYteQvbSfw0n8wiCZDhowDGDxo1vBky5pugFuxX4YMGQsyeAmMvKaWSvL/FifUZMiQsSDjCg++rNqoGWlIBEmhDBkytmB0AmU6llFrMPDCnAwZMvZmpEWuWhuy02xAn0CGDBkHMNKCPi+rFVuSIVKGDBkyZpXy008TF91kyJAhI1wQGdHg13/cKUOGjAMYPKXj19OxiVY7U4YMGVsz0vIZT914escbDK1GpgwZMtZj/AHlDrJQXwO1EQAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
