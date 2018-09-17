@@ -13,27 +13,25 @@
     
     
     
-    <title>node中踩的坑（不定时更新） | Ice Panpan&#39;s blog | Tan Yibing&#39;s blog</title>
+    <title>javascript异步（二） | Ice Panpan&#39;s blog | Tan Yibing&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Node,Koa">
-    <meta name="description" content="2018-9-14问题在Koa中想要使用art-template这个模板引擎，但是使用之后在渲染模板的时候一直报下面的错：                                                                                                              分析报的错说我的路径必须为一个字符串，我重新检查后，发现并">
-<meta name="keywords" content="Node,Koa">
+    <meta name="keywords" content="JavaScript">
+    <meta name="description" content="JavaScript异步（二）————PromiseES6中的Promise写一个传统的异步操作我们先写一段异步的代码，然后用promise来封装一下： var wait = function () {     var task = function () {         console.log(&amp;apos;执行完成&amp;apos;)     }     setTimeout(task, 2000">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node中踩的坑（不定时更新）">
-<meta property="og:url" content="http://tanyibing.com/2018/09/14/node中踩的坑（不定时更新）/index.html">
+<meta property="og:title" content="javascript异步（二）">
+<meta property="og:url" content="http://tanyibing.com/2018/09/17/javascript异步（二）/index.html">
 <meta property="og:site_name" content="Ice Panpan&#39;s blog">
-<meta property="og:description" content="2018-9-14问题在Koa中想要使用art-template这个模板引擎，但是使用之后在渲染模板的时候一直报下面的错：                                                                                                              分析报的错说我的路径必须为一个字符串，我重新检查后，发现并">
+<meta property="og:description" content="JavaScript异步（二）————PromiseES6中的Promise写一个传统的异步操作我们先写一段异步的代码，然后用promise来封装一下： var wait = function () {     var task = function () {         console.log(&amp;apos;执行完成&amp;apos;)     }     setTimeout(task, 2000">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://tanyibing.com/img/node/1.png">
-<meta property="og:updated_time" content="2018-09-14T09:16:20.602Z">
+<meta property="og:updated_time" content="2018-09-17T07:16:39.506Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node中踩的坑（不定时更新）">
-<meta name="twitter:description" content="2018-9-14问题在Koa中想要使用art-template这个模板引擎，但是使用之后在渲染模板的时候一直报下面的错：                                                                                                              分析报的错说我的路径必须为一个字符串，我重新检查后，发现并">
-<meta name="twitter:image" content="http://tanyibing.com/img/node/1.png">
+<meta name="twitter:title" content="javascript异步（二）">
+<meta name="twitter:description" content="JavaScript异步（二）————PromiseES6中的Promise写一个传统的异步操作我们先写一段异步的代码，然后用promise来封装一下： var wait = function () {     var task = function () {         console.log(&amp;apos;执行完成&amp;apos;)     }     setTimeout(task, 2000">
     
         <link rel="alternate" type="application/atom+xml" title="Ice Panpan&#39;s blog" href="/atom.xml">
     
@@ -128,7 +126,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">node中踩的坑（不定时更新）</div>
+        <div class="flex-col header-title ellipsis">javascript异步（二）</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -156,15 +154,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">node中踩的坑（不定时更新）</h1>
+        <h1 class="title">javascript异步（二）</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-09-14T09:02:35.000Z" itemprop="datePublished" class="page-time">
-  2018-09-14
+                <time datetime="2018-09-17T06:40:16.000Z" itemprop="datePublished" class="page-time">
+  2018-09-17
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Node/">Node</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
 
             
         </h5>
@@ -181,21 +179,21 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2018-9-14"><span class="post-toc-number">1.</span> <span class="post-toc-text">2018-9-14</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JavaScript异步（二）————Promise"><span class="post-toc-number">1.</span> <span class="post-toc-text">JavaScript异步（二）————Promise</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ES6中的Promise"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">ES6中的Promise</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#写一个传统的异步操作"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">写一个传统的异步操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用Promise进行封装"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">用Promise进行封装</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Promise在ES6中的常见用法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Promise在ES6中的常见用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#参数传递"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">参数传递</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#异常捕获"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">异常捕获</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#串联多个异步操作"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">串联多个异步操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Promise-all-amp-Promise-race"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">Promise.all &amp; Promise.race</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-node中踩的坑（不定时更新）"
-  class="post-article article-type-post fade" itemprop="blogPost">
+<article id="w-javascript异步（二）"
+  class="post-article article-type-w fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">node中踩的坑（不定时更新）</h1>
+        <h1 class="post-card-title">javascript异步（二）</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-09-14 17:02:35" datetime="2018-09-14T09:02:35.000Z"  itemprop="datePublished">2018-09-14</time>
+            <time class="post-time" title="2018-09-17 14:40:16" datetime="2018-09-17T06:40:16.000Z"  itemprop="datePublished">2018-09-17</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Node/">Node</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
 
 
 
@@ -207,20 +205,107 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="2018-9-14"><a href="#2018-9-14" class="headerlink" title="2018-9-14"></a>2018-9-14</h3><p><strong>问题</strong><br>在Koa中想要使用art-template这个模板引擎，但是使用之后在渲染模板的时候一直报下面的错：</p>
-<blockquote>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/img/node/1.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-</blockquote>
-<p><strong>分析</strong><br>报的错说我的路径必须为一个字符串，我重新检查后，发现并不存在语法错误呀，果断去度娘看看，试了几个方法解决不了我的问题，但是反馈最多的一个方法就是node版本和其他的不兼容。我靠！这要重搞工作量有点大，果断换个模板引擎吧。</p>
-<p><strong>解决方法</strong><br>最后回去官网看一看，发现有<code>art-template</code>和<code>koa-art-template</code>之分，但是配置好像没啥区别啊。把引入的模块改成<code>koa-art-template</code>，再试试，成了！什么鬼！不管了，问题暂时是解决了。</p>
-<p><strong>另外附上项目的地址</strong>：<a href="https://github.com/TanYiBing/cms_demo" target="_blank" rel="noopener">https://github.com/TanYiBing/cms_demo</a></p>
+            <h1 id="JavaScript异步（二）————Promise"><a href="#JavaScript异步（二）————Promise" class="headerlink" title="JavaScript异步（二）————Promise"></a>JavaScript异步（二）————Promise</h1><h2 id="ES6中的Promise"><a href="#ES6中的Promise" class="headerlink" title="ES6中的Promise"></a>ES6中的Promise</h2><h3 id="写一个传统的异步操作"><a href="#写一个传统的异步操作" class="headerlink" title="写一个传统的异步操作"></a>写一个传统的异步操作</h3><p>我们先写一段异步的代码，然后用promise来封装一下：</p>
+<pre><code>var wait = function () {
+    var task = function () {
+        console.log(&apos;执行完成&apos;)
+    }
+    setTimeout(task, 2000)
+}
+wait()
+</code></pre><h3 id="用Promise进行封装"><a href="#用Promise进行封装" class="headerlink" title="用Promise进行封装"></a>用Promise进行封装</h3><pre><code>const wait =  function () {
+    // 定义一个 promise 对象
+    const promise = new Promise((resolve, reject) =&gt; {
+        // 将之前的异步操作，包括到这个 new Promise 函数之内
+        const task = function () {
+            console.log(&apos;执行完成&apos;)
+            resolve()  // callback 中去执行 resolve 或者 reject
+        }
+        setTimeout(task, 2000)
+    })
+    // 返回 promise 对象
+    return promise
+}
+</code></pre><p>我们首先将之前传统的异步方法用<code>new Promise((resolve, reject) =&gt; {...})</code>包装起来，然后return就行了。异步操作的内部，在callback中执行<code>resolve()</code>（表明成功了，失败的话执行reject）。</p>
+<p>我们接下来怎么处理返回的数据呢：</p>
+<pre><code>const w = wait()
+w.then(() =&gt; {
+    console.log(&apos;ok 1&apos;)
+}, () =&gt; {
+    console.log(&apos;err 1&apos;)
+}).then(() =&gt; {
+    console.log(&apos;ok 2&apos;)
+}, () =&gt; {
+    console.log(&apos;err 2&apos;)
+})
+</code></pre><p>我们调用<code>then</code>方法，这个方法接收两个参数，第一个在成功时（触发resolve）执行，第二个在失败时(触发reject)时执行。而且，then还可以进行链式操作。</p>
+<p>以上就是ES6中Promise的基本使用方法，接下来看一些Promise的常见用法吧。</p>
+<h2 id="Promise在ES6中的常见用法"><a href="#Promise在ES6中的常见用法" class="headerlink" title="Promise在ES6中的常见用法"></a>Promise在ES6中的常见用法</h2><p>为了方便使用，我们首先封装个Promise，为后面使用：</p>
+<pre><code>const fs = require(&apos;fs&apos;)
+const path = require(&apos;path&apos;)  // 后面获取文件路径时候会用到
+const readFilePromise = function (fileName) {
+    return new Promise((resolve, reject) =&gt; {
+        fs.readFile(fileName, (err, data) =&gt; {
+            if (err) {
+                reject(err)  // 注意，这里执行 reject 是传递了参数，后面会有地方接收到这个参数
+            } else {
+                resolve(data.toString())  // 注意，这里执行 resolve 时传递了参数，后面会有地方接收到这个参数
+            }
+        })
+    })
+}
+</code></pre><h3 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h3><p>我们要使用上面封装的readFilePromise读取一个 json 文件../data/data2.json，这个文件内容非常简单：{“a”:100, “b”:200}</p>
+<p>先将文件内容打印出来，代码如下。大家需要注意，readFilePromise函数中，执行<code>resolve(data.toString())</code>传递的参数内容，会被下面代码中的data参数所接收到。</p>
+<pre><code>const fullFileName = path.resolve(__dirname, &apos;../data/data2.json&apos;)
+const result = readFilePromise(fullFileName)
+result.then(data =&gt; {
+    console.log(data)
+})
+</code></pre><p>参数传递就是在异步里面通过resolve来传递至，然后就会被第一个<code>then</code>处理时接收到，而且通过<code>then</code>的链式操作可以继续将处理后的值传递下去。</p>
+<h3 id="异常捕获"><a href="#异常捕获" class="headerlink" title="异常捕获"></a>异常捕获</h3><p>我们知道then会接收两个参数（函数），第一个参数会在执行resolve之后触发（还能传递参数），第二个参数会在执行reject之后触发（其实也可以传递参数，和resolve传递参数一样），但是上面的例子中，我们没有用到then的第二个参数。这是为何呢 ———— 因为不建议这么用。</p>
+<p>对于Promise中的异常处理，我们建议用catch方法，而不是then的第二个参数。请看下面的代码，以及注释。</p>
+<pre><code>const fullFileName = path.resolve(__dirname, &apos;../data/data2.json&apos;)
+const result = readFilePromise(fullFileName)
+result.then(data =&gt; {
+    console.log(data)
+    return JSON.parse(data).a
+}).then(a =&gt; {
+    console.log(a)
+).catch(err =&gt; {
+    console.log(err.stack)  // 这里的 catch 就能捕获 readFilePromise 中触发的 reject ，而且能接收 reject 传递的参数
+})
+</code></pre><p>在若干个then串联之后，我们一般会在最后跟一个.catch来捕获异常，而且执行reject时传递的参数也会在catch中获取到。这样做的好处是：</p>
+<ul>
+<li>让程序看起来更加简洁，是一个串联的关系，没有分支（如果用then的两个参数，就会出现分支，影响阅读）</li>
+<li>更像是try - catch的样子，更易理解</li>
+</ul>
+<h3 id="串联多个异步操作"><a href="#串联多个异步操作" class="headerlink" title="串联多个异步操作"></a>串联多个异步操作</h3><p>如果现在有一个需求：先读取data2.json的内容，当成功之后，再去读取data1.json。这样的需求，如果用传统的callback去实现，会变得很麻烦。而且，现在只是两个文件，如果是十几个文件这样做，写出来的代码就没法看了（臭名昭著的callback-hell）。但是用刚刚学到的Promise就可以轻松胜任这项工作：</p>
+<pre><code>const fullFileName2 = path.resolve(__dirname, &apos;../data/data2.json&apos;)
+const result2 = readFilePromise(fullFileName2)
+const fullFileName1 = path.resolve(__dirname, &apos;../data/data1.json&apos;)
+const result1 = readFilePromise(fullFileName1)
 
+result2.then(data =&gt; {
+    console.log(&apos;data2.json&apos;, data)
+    return result1  // 此处只需返回读取 data1.json 的 Promise 即可
+}).then(data =&gt; {
+    console.log(&apos;data1.json&apos;, data) // data 即可接收到 data1.json 的内容
+})
+</code></pre><p>上文“参数传递”提到过，如果then有链式操作，前面步骤返回的值，会被后面的步骤获取到。但是，如果前面步骤返回值是一个Promise的话，情况就不一样了。如果前面返回的是Promise对象，后面的then将会被当做这个返回的Promise的第一个then来对待。</p>
+<h3 id="Promise-all-amp-Promise-race"><a href="#Promise-all-amp-Promise-race" class="headerlink" title="Promise.all &amp; Promise.race"></a>Promise.all &amp; Promise.race</h3><p>现在我需要一起读取data1.json和data2.json这两个文件，等待它们全部都被读取完，再做下一步的操作。此时需要用到Promise.all：</p>
+<pre><code>// Promise.all 接收一个包含多个 promise 对象的数组
+Promise.all([result1, result2]).then(datas =&gt; {
+    // 接收到的 datas 是一个数组，依次包含了多个 promise 返回的内容
+    console.log(datas[0])
+    console.log(datas[1])
+})
+</code></pre><p>读取两个文件data1.json和data2.json，现在我需要一起读取这两个文件，但是只要有一个已经读取了，就可以进行下一步的操作。此时需要用到Promise.race：</p>
+<pre><code>// Promise.race 接收一个包含多个 promise 对象的数组
+Promise.race([result1, result2]).then(data =&gt; {
+    // data 即最先执行完成的 promise 的返回值
+    console.log(data)
+})
+</code></pre>
         </div>
 
         <blockquote class="post-copyright">
@@ -228,12 +313,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-09-14T09:16:20.602Z" itemprop="dateUpdated">2018-09-14 17:16:20</time>
+    最后更新时间：<time datetime="2018-09-17T07:16:39.506Z" itemprop="dateUpdated">2018-09-17 15:16:39</time>
 </span><br>
 
 
         
-        除特别说明外，文章均采用「知识共享 署名 - 非商业性 - 相同方式共享 4.0 协议」进行许可，转载需注明文章出处：<a href="/2018/09/14/node中踩的坑（不定时更新）/" target="_blank" rel="external">http://tanyibing.com/2018/09/14/node中踩的坑（不定时更新）/</a>
+        除特别说明外，文章均采用「知识共享 署名 - 非商业性 - 相同方式共享 4.0 协议」进行许可，转载需注明文章出处：<a href="/2018/09/17/javascript异步（二）/" target="_blank" rel="external">http://tanyibing.com/2018/09/17/javascript异步（二）/</a>
         
     </div>
     
@@ -254,7 +339,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Koa/">Koa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
 
             
@@ -264,7 +349,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/14/node中踩的坑（不定时更新）/&title=《node中踩的坑（不定时更新）》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/17/javascript异步（二）/&title=《javascript异步（二）》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -274,22 +359,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/14/node中踩的坑（不定时更新）/&title=《node中踩的坑（不定时更新）》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/17/javascript异步（二）/&title=《javascript异步（二）》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/14/node中踩的坑（不定时更新）/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/17/javascript异步（二）/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《node中踩的坑（不定时更新）》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/14/node中踩的坑（不定时更新）/&via=http://tanyibing.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《javascript异步（二）》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/17/javascript异步（二）/&via=http://tanyibing.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/14/node中踩的坑（不定时更新）/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/17/javascript异步（二）/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -309,21 +394,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2018/09/17/javascript异步（二）/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">javascript异步（二）</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/09/14/javascript异步（一）/" id="post-next" class="post-nav-link">
+      <a href="/2018/09/14/node中踩的坑（不定时更新）/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">javascript异步（一）</h4>
+        <h4 class="title">node中踩的坑（不定时更新）</h4>
       </a>
     </div>
   
@@ -444,7 +522,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/14/node中踩的坑（不定时更新）/&title=《node中踩的坑（不定时更新）》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/17/javascript异步（二）/&title=《javascript异步（二）》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -454,22 +532,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/14/node中踩的坑（不定时更新）/&title=《node中踩的坑（不定时更新）》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/17/javascript异步（二）/&title=《javascript异步（二）》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/14/node中踩的坑（不定时更新）/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/17/javascript异步（二）/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《node中踩的坑（不定时更新）》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/14/node中踩的坑（不定时更新）/&via=http://tanyibing.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《javascript异步（二）》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/17/javascript异步（二）/&via=http://tanyibing.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/14/node中踩的坑（不定时更新）/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/17/javascript异步（二）/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -480,7 +558,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuklEQVR42u3aQW7DMAwEwP7/0ynQUw51siTFuAXGp8B2ZI0DSMpSX1/x8fg5nj8/n3n9rav7k6uvzxw78PDw8FpdvzpOvbmrF1Q9n/cZDw8Pb5uXdCgfda/uyZ+YgJMW8PDw8O7lvZ4ekqvVFq5IeHh4eP+Fl38r+W4y6OPh4eH9ZV7yyN7SOTl6E8PhrAUPDw8v5vVC2Hs/r9f38PDw8FpV9ckgniym8zO93uLh4eFt8KqbqCYdzbdYnSqn4eHh4e3x8kE8uZrEstXgeGUDAR4eHl6Ll5PyaaO6oaq63arwY+Dh4eGt8aqDeF4kqy7K81cc/QB4eHh4N/HyyKD3OnqbsaIfAw8PD2+NlyyF89J+r7jV2wlQ+MeAh4eHt8DLQ4deQau3qasXcLyJcfHw8PAGvHxwry6pe1sKquwo4MDDw8M7ysu7OIkq8sVxNUR+0xM8PDy8NV5voM/j3WpEOymwXf5jwMPDwzvK6wGag3Xxaj5V/NIyHh4e3gIvLzvlC+WkncnGheqkhYeHh7fBq34tXy5PWshLX4WdZXh4eHgf4SWF/MnMM2//zRPx8PDw1njVjlbD3OrqPo8nosQFDw8P7yO8HFzdqpUUtPIJJlpS4+Hh4R3lVUv7vcdUWzj1BwAPDw9vj1ctO+UPyxff+Zm8qIaHh4e3zUuG48miOXn82VADDw8Pb4NXLfDnXcmXxb3XEd2Ph4eH9xHevLiVtJZPNtV4opzy4uHh4cW8R/FIwoJyaT+OFar9wcPDw9vgVcOIAyX8QUeTFzSKcfHw8PBiXi8qnUwkvTij1z4eHh7eHq9aOaouhXv7oHolussYFw8PD+8mXq+LvU0DvRLaaGLAw8PDO8rL49p56SsJMsr1PTw8PLyjvLOBQt6Vyf1R0IyHh4e3wKsWwPLFbi9umGwXaCLx8PDwUt43FNeSl3y/2IAAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3aS24CMRAFQO5/abJNFEHeaw+Rxq5ZITQYlxet/vjxiJ/nt+f398n7+edXa17wYGBg3JbxfPu8f2f2X6/WTN55+e8YGBgHMJK/TEg5Mgniyd4wMDAwXr3zfuvtVlZ+i4GBgdGma0nwTX6FgYGBMSti8821pWxe6F5Qi2NgYNyQMWuT/c/nj8w3MDAwbsV4lk+yQj7IXNnJj5UxMDC2ZuQBLkkZ87QvOZp6qICBgXEAI2+KzRpts6SwuI6GgYGxKaMNeTm4DdZty+/HNxgYGAcwkk20o8dZ0384wsTAwNiaMRtAtunjCqAelGJgYGzNaMvIfNFZopm35zAwMPZmtG39JCzm6WYO+OOAMDAwtmbMEr7162JXNdowMDBOYBRzzjIHSwJl26obXrPAwMDYgjG7YJE0ztrYnx8rBgbGaYzZlYtZgpiE0fbSGAYGxgmMvIhtr1zkyd+w2s6zSAwMjNsy2pHADJyH11m4x8DAOIfRpmttKbuS/OXNOAwMjF0ZyahyJVCuXDUrWngYGBgHMNrrWfmIsT2gtgDGwMA4h9GWoCtlcB7ii3CPgYGxKeNZPnnLfuVQ6nIXAwNja8Z6d31lW+2Ioj1KDAyMnRgr7furwvFKqoqBgXEO4/+vX6ysHw0GMDAwjme0jf6VEP/BgIuBgXEAI990W+7Wb2JgYBzAaIcBV/X22msZGBgYZzLa0jGHrSeOV5XWGBgYt2V8AeH9S6kBhZoEAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
