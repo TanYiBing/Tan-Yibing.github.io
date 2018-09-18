@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>javascript异步（三） | Ice Panpan&#39;s blog | Tan Yibing&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JavaScript">
+    <meta name="description" content="JavaScript异步（二）————Generator上次已经介绍过一点Generator对象的知识了，这次就继续说说Generator的应用吧。 Generator的应用使用next和yield传递参数我们已经知道，yield具有返回数据的功能，如下代码。yield后面的数据被返回，存放到返回结果中的value属性中。这算是一个方向的参数传递。 function* G() {     yiel">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript异步（三）">
+<meta property="og:url" content="http://tanyibing.com/2018/09/18/javascript异步（三）/index.html">
+<meta property="og:site_name" content="Ice Panpan&#39;s blog">
+<meta property="og:description" content="JavaScript异步（二）————Generator上次已经介绍过一点Generator对象的知识了，这次就继续说说Generator的应用吧。 Generator的应用使用next和yield传递参数我们已经知道，yield具有返回数据的功能，如下代码。yield后面的数据被返回，存放到返回结果中的value属性中。这算是一个方向的参数传递。 function* G() {     yiel">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-18T02:48:45.039Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript异步（三）">
+<meta name="twitter:description" content="JavaScript异步（二）————Generator上次已经介绍过一点Generator对象的知识了，这次就继续说说Generator的应用吧。 Generator的应用使用next和yield传递参数我们已经知道，yield具有返回数据的功能，如下代码。yield后面的数据被返回，存放到返回结果中的value属性中。这算是一个方向的参数传递。 function* G() {     yiel">
+    
+        <link rel="alternate" type="application/atom+xml" title="Ice Panpan&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/avatar_before.jpg">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Ice Panpan(Tan Yibing)</h5>
+          <a href="mailto:tanyibing1995@gmail.com" title="tanyibing1995@gmail.com" class="mail">tanyibing1995@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TanYiBing" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/u/5341296740?refer_flag=1005055010_" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/friendLink"  >
+                <i class="icon icon-lg icon-users"></i>
+                友链
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">javascript异步（三）</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+        
+            <a id="header-high" style="text-decoration: none; margin-left:12px; width:71px; margin-right:5px" class="header-icon waves-effect waves-circle waves-light" onclick="javascript:(    /*     * Copyright (C) 2015 Rocko (rocko.xyz) <rocko.zxp@gmail.com>     *     * Licensed under the Apache License, Version 2.0 (the 'License');     * you may not use this file except in compliance with the License.     * You may obtain a copy of the License at     *     *      http://www.apache.org/licenses/LICENSE-2.0     *     * Unless required by applicable law or agreed to in writing, software     * distributed under the License is distributed on an 'AS IS' BASIS,     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.     * See the License for the specific language governing permissions and     * limitations under the License.     */    function go() {        function c() {        var e = document.createElement('link');        e.setAttribute('type', 'text/css');        e.setAttribute('rel', 'stylesheet');        e.setAttribute('href', f);        e.setAttribute('class', l);        document.body.appendChild(e)    }     function h() {        var e = document.getElementsByClassName(l);        for (var t = 0; t < e.length; t++) {            document.body.removeChild(e[t])        }    }     function p() {        var e = document.createElement('div');        e.setAttribute('class', a);        document.body.appendChild(e);        setTimeout(function() {            document.body.removeChild(e)        }, 100)    }     function d(e) {        return {            height : e.offsetHeight,            width : e.offsetWidth        }    }     function v(i) {        var s = d(i);        return s.height > e &amp;&amp; s.height < n &amp;&amp; s.width > t &amp;&amp; s.width < r    }     function m(e) {        var t = e;        var n = 0;        while (!!t) {            n += t.offsetTop;            t = t.offsetParent        }        return n    }     function g() {        var e = document.documentElement;        if (!!window.innerWidth) {            return window.innerHeight        } else if (e &amp;&amp; !isNaN(e.clientHeight)) {            return e.clientHeight        }        return 0    }     function y() {        if (window.pageYOffset) {            return window.pageYOffset        }        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)    }     function E(e) {        var t = m(e);        return t >= w &amp;&amp; t <= b + w    }     var songs = [               'http://rocko-blog.qiniudn.com/Music-Wake-Live.mp3' ,     'http://rocko-blog.qiniudn.com/Music-Fashion_Show.mp3'           ,                'http://rocko-blog.qiniudn.com/Music-outside.mp3',                'http://rocko-blog.qiniudn.com/Music-sunburst.mp3'    ];    function S() {        var e = document.getElementById('audio_element_id');        if(e != null){            var index = parseInt(e.getAttribute('curSongIndex'));            if(index > songs.length - 2) {                index = 0;            } else {                index++;            }            e.setAttribute('curSongIndex', index);            N();        }        e.src = i;        e.play()    }     function x(e) {        e.className += ' ' + s + ' ' + o    }     function T(e) {        e.className += ' ' + s + ' ' + u[Math.floor(Math.random() * u.length)]    }     function N() {        var e = document.getElementsByClassName(s);        var t = new RegExp('\\b' + s + '\\b');        for (var n = 0; n < e.length; ) {            e[n].className = e[n].className.replace(t, '')        }    }    function initAudioEle() {        var e = document.getElementById('audio_element_id');        if(e === null){            e = document.createElement('audio');            e.setAttribute('class', l);            e.setAttribute('curSongIndex', 0);            e.id = 'audio_element_id';            e.loop = false;            e.bgcolor = 0;            e.addEventListener('canplay', function() {            setTimeout(function() {                x(k)            }, 500);            setTimeout(function() {                N();                p();                for (var e = 0; e < O.length; e++) {                    T(O[e])                }            }, 15500)        }, true);        e.addEventListener('ended', function() {            N();            h();            go();        }, true);        e.innerHTML = ' <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>';        document.body.appendChild(e);        }    }        initAudioEle();    var e = 30;    var t = 30;    var n = 350;    var r = 350;    var curSongIndex = parseInt(document.getElementById('audio_element_id').getAttribute('curSongIndex'));    var i = songs[curSongIndex];        var s = 'mw-harlem_shake_me';    var o = 'im_first';    var u = ['im_drunk', 'im_baked', 'im_trippin', 'im_blown'];    var a = 'mw-strobe_light';    var f = 'https://rocko.xyz/css/harlem-shake-style.css';        var l = 'mw_added_css';    var b = g();    var w = y();    var C = document.getElementsByTagName('*');    var k = null;    for (var L = 0; L < C.length; L++) {        var A = C[L];        if (v(A)) {            if (E(A)) {                k = A;                break            }        }    }    if (A === null) {        console.warn('Could not find a node of the right size. Please try a different page.');        return    }    c();    S();    var O = [];    for (var L = 0; L < C.length; L++) {        var A = C[L];        if (v(A)) {            O.push(A)        }    }    })()">
+        <i class="icon icon-lg icon-music"></i> High~
+        </a>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">javascript异步（三）</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-18T01:18:08.000Z" itemprop="datePublished" class="page-time">
+  2018-09-18
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JavaScript异步（二）————Generator"><span class="post-toc-number">1.</span> <span class="post-toc-text">JavaScript异步（二）————Generator</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Generator的应用"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Generator的应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用next和yield传递参数"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">使用next和yield传递参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#for…of的应用"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">for…of的应用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#yield-嵌套Generator"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">yield*嵌套Generator</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generator中的this"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">Generator中的this</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Thunk函数"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Thunk函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#普通异步函数"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">普通异步函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#封装成Thunk函数"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">封装成Thunk函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用thunkify库"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">使用thunkify库</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Generator异步操作"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Generator异步操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generator中使用Thunk"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">Generator中使用Thunk</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#挨个读取两个文件的内容"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">挨个读取两个文件的内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自驱动流程"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">自驱动流程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#co库"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">co库</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Koa中使用Generator"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Koa中使用Generator</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Koa中如何使用Generator"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">Koa中如何使用Generator</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Koa的这种机制如何实现的"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">Koa的这种机制如何实现的</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-javascript异步（三）"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">javascript异步（三）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-18 09:18:08" datetime="2018-09-18T01:18:08.000Z"  itemprop="datePublished">2018-09-18</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="JavaScript异步（二）————Generator"><a href="#JavaScript异步（二）————Generator" class="headerlink" title="JavaScript异步（二）————Generator"></a>JavaScript异步（二）————Generator</h1><p>上次已经介绍过一点Generator对象的知识了，这次就继续说说Generator的应用吧。</p>
+<h2 id="Generator的应用"><a href="#Generator的应用" class="headerlink" title="Generator的应用"></a>Generator的应用</h2><h3 id="使用next和yield传递参数"><a href="#使用next和yield传递参数" class="headerlink" title="使用next和yield传递参数"></a>使用next和yield传递参数</h3><p>我们已经知道，yield具有返回数据的功能，如下代码。yield后面的数据被返回，存放到返回结果中的value属性中。这算是一个方向的参数传递。</p>
+<pre><code>function* G() {
+    yield 100
+}
+const g = G()
+console.log( g.next() ) // {value: 100, done: false}
+</code></pre><p>还有另一个方向的参数传递，就是next向yield传递，如下：</p>
+<pre><code>function* G() {
+    const a = yield 100
+    console.log(&apos;a&apos;, a)  // a aaa
+    const b = yield 200
+    console.log(&apos;b&apos;, b)  // b bbb
+    const c = yield 300
+    console.log(&apos;c&apos;, c)  // c ccc
+}
+const g = G()
+g.next()    // value: 100, done: false
+g.next(&apos;aaa&apos;) // value: 200, done: false
+g.next(&apos;bbb&apos;) // value: 300, done: false
+g.next(&apos;ccc&apos;) // value: undefined, done: true
+</code></pre><p>我们看看上面代码的执行过程：</p>
+<ul>
+<li>执行第一个g.next()时，未传递任何参数，返回的{value: 100, done: false}，这个应该没有疑问</li>
+<li>执行第二个g.next(‘aaa’)时，传递的参数是’aaa’，这个’aaa’就会被赋值到G内部的a标量中，然后执行console.log(‘a’, a)打印出来，最后返回{value: 200, done: false}</li>
+<li>执行第三个、第四个时，道理都是完全一样的，大家自己捋一捋。</li>
+</ul>
+<p>有一个要点需要注意，就g.next(‘aaa’)是将’aaa’传递给上一个已经执行完了的yield语句前面的变量，而不是即将执行的yield前面的变量。</p>
+<h3 id="for…of的应用"><a href="#for…of的应用" class="headerlink" title="for…of的应用"></a>for…of的应用</h3><p>for…of是Iterator对象的一个经典操作，我们使用一个斐波那契数列来看一看：</p>
+<pre><code>function* fibonacci() {
+    let [prev, curr] = [0, 1]
+    for (;;) {
+        [prev, curr] = [curr, prev + curr]
+        // 将中间值通过 yield 返回，并且保留函数执行的状态，因此可以非常简单的实现 fibonacci
+        yield curr
+    }
+}
+for (let n of fibonacci()) {
+    if (n &gt; 1000) {
+        break
+    }
+    console.log(n)
+}
+</code></pre><p>这样我们就能找到1000里面的斐波那契数列了。</p>
+<h3 id="yield-嵌套Generator"><a href="#yield-嵌套Generator" class="headerlink" title="yield*嵌套Generator"></a>yield*嵌套Generator</h3><p>如果我们有两个Generator，我们想在第一个中包含第二个：</p>
+<pre><code>function* G1() {
+    yield &apos;a&apos;
+    yield* G2()  // 使用 yield* 执行 G2()
+    yield &apos;b&apos;
+}
+function* G2() {
+    yield &apos;x&apos;
+    yield &apos;y&apos;
+}
+for (let item of G1()) {
+    console.log(item)
+}
+</code></pre><p>之前学过的yield后面会接一个普通的 JS 对象，而yield<em> 后面会接一个Generator，而且会把它其中的yield按照规则来一步一步执行。如果有多个Generator串联使用的话（例如Koa源码中），用yield</em>来操作非常方便。</p>
+<h3 id="Generator中的this"><a href="#Generator中的this" class="headerlink" title="Generator中的this"></a>Generator中的this</h3><p>对于以下这种写法，大家可能会和构造函数创建对象的写法产生混淆，这里一定要注意 —— Generator 不是函数，更不是构造函数</p>
+<pre><code>function* G() {}
+const g = G()
+</code></pre><p>而以下这种写法，更加不会成功。只有构造函数才会这么用，构造函数返回的是this，而Generator返回的是一个Iterator对象。完全是两码事，千万不要搞混了。</p>
+<pre><code>function* G() {
+    this.a = 10
+}
+const g = G()
+console.log(g.a) // 报错
+</code></pre><h2 id="Thunk函数"><a href="#Thunk函数" class="headerlink" title="Thunk函数"></a>Thunk函数</h2><p>为什么要说说Thunk函数呢，因为它和Generator处理异步操作还是有关系的，我们先看看。</p>
+<h3 id="普通异步函数"><a href="#普通异步函数" class="headerlink" title="普通异步函数"></a>普通异步函数</h3><pre><code>fs.readFile(&apos;data1.json&apos;, &apos;utf-8&apos;, (err, data) =&gt; {
+    // 获取文件内容
+})
+</code></pre><p>这个普通的node读取文件的函数传递了三个函数，接下来我们进行一点改造。</p>
+<h3 id="封装成Thunk函数"><a href="#封装成Thunk函数" class="headerlink" title="封装成Thunk函数"></a>封装成Thunk函数</h3><pre><code>const thunk = function (fileName, codeType) {
+    // 返回一个只接受 callback 参数的函数
+    return function (callback) {
+        fs.readFile(fileName, codeType, callback)
+    }
+}
+const readFileThunk = thunk(&apos;data1.json&apos;, &apos;utf-8&apos;)
+readFileThunk((err, data) =&gt; {
+    // 获取文件内容
+})
+</code></pre><p>从上面的Thunk函数可以看出，执行const readFileThunk = thunk(‘data1.json’, ‘utf-8’)返回的其实是一个函数，readFileThunk这个函数，只接受一个参数，而且这个参数是一个callback函数。</p>
+<h3 id="使用thunkify库"><a href="#使用thunkify库" class="headerlink" title="使用thunkify库"></a>使用thunkify库</h3><p>上面的代码封装使我们自己做的，但我们不需要每遇到一个情况就自己做，我们可以直接使用第三方的thunkify就可以了。</p>
+<pre><code>onst thunk = thunkify(fs.readFile)
+const readFileThunk = thunk(&apos;data1.json&apos;, &apos;utf-8&apos;)
+readFileThunk((err, data) =&gt; {
+    // 获取文件内容
+})
+</code></pre><h2 id="Generator异步操作"><a href="#Generator异步操作" class="headerlink" title="Generator异步操作"></a>Generator异步操作</h2><p>上次我们只是大概的讲了讲，接下来我们详细看看Generator是如何进行异步操作的</p>
+<h3 id="Generator中使用Thunk"><a href="#Generator中使用Thunk" class="headerlink" title="Generator中使用Thunk"></a>Generator中使用Thunk</h3><p>直接看代码吧</p>
+<pre><code>const readFileThunk = thunkify(fs.readFile)
+const gen = function* () {
+    const r1 = yield readFileThunk(&apos;data1.json&apos;)
+    console.log(r1)
+    const r2 = yield readFileThunk(&apos;data2.json&apos;)
+    console.log(r2)
+}
+</code></pre><h3 id="挨个读取两个文件的内容"><a href="#挨个读取两个文件的内容" class="headerlink" title="挨个读取两个文件的内容"></a>挨个读取两个文件的内容</h3><p>接着上面的代码继续写：</p>
+<pre><code>const g = gen()
+// 试着打印 g.next() 这里一定要明白 value 是一个 thunk函数 ，否则下面的代码你都看不懂
+// console.log( g.next() )  // g.next() 返回 {{ value: thunk函数, done: false }} 
+
+// 下一行中，g.next().value 是一个 thunk 函数，它需要一个 callback 函数作为参数传递进去
+g.next().value((err, data1) =&gt; {
+    // 这里的 data1 获取的就是第一个文件的内容。下一行中，g.next(data1) 可以将数据传递给上面的 r1 变量，此前已经讲过这种参数传递的形式
+    // 下一行中，g.next(data1).value 又是一个 thunk 函数，它又需要一个 callback 函数作为参数传递进去
+    g.next(data1).value((err, data2) =&gt; {
+        // 这里的 data2 获取的是第二个文件的内容，通过 g.next(data2) 将数据传递个上面的 r2 变量
+        g.next(data2)
+    })
+})
+</code></pre><p>仔细看望上面的注释，也许会有中恍然大悟的感觉，原来是这样子把异步写成同步的感觉。</p>
+<h3 id="自驱动流程"><a href="#自驱动流程" class="headerlink" title="自驱动流程"></a>自驱动流程</h3><p>接下来我们做一个自驱动的流程，定义好Generator的代码之后，就让他自动执行：</p>
+<pre><code>// 自动流程管理的函数
+function run(generator) {
+    const g = generator()
+    function next(err, data) {
+        const result = g.next(data)  // 返回 { value: thunk函数, done: ... }
+        if (result.done) {
+            // result.done 表示是否结束，如果结束了那就 return 作罢
+            return
+        }
+        result.value(next)  // result.value 是一个 thunk 函数，需要一个 callback 函数作为参数，而 next 就是一个 callback 形式的函数
+    }
+    next() // 手动执行以启动第一次 next
+}
+
+// 定义 Generator
+const readFileThunk = thunkify(fs.readFile)
+const gen = function* () {
+    const r1 = yield readFileThunk(&apos;data1.json&apos;)
+    console.log(r1.toString())
+    const r2 = yield readFileThunk(&apos;data2.json&apos;)
+    console.log(r2.toString())
+}
+
+// 启动执行
+run(gen)
+</code></pre><p>我们简单分析下：</p>
+<ul>
+<li>最后一行run(gen)之后，进入run函数内部执行</li>
+<li>先const g = generator()创建Generator实例，然后定义一个next方法，并且立即执行next()</li>
+<li>注意这个next函数的参数是err, data两个，和我们fs.readFile用到的callback函数形式完全一样</li>
+<li>第一次执行next时，会执行const result = g.next(data)，而g.next(data)返回的是{ value: thunk函数, done: … }，value是一个thunk函数，done表示是否结束</li>
+<li>如果done: true，那就直接return了，否则继续进行</li>
+<li>result.value是一个thunk函数，需要接受一个callback函数作为参数传递进去，因此正好把next给传递进去，让next一直被执行下去</li>
+</ul>
+<h3 id="co库"><a href="#co库" class="headerlink" title="co库"></a>co库</h3><p>这个流程我们也可以使用第三方的库co，用Generator的工程师肯定都要用co，两者天生一对。</p>
+<pre><code>// 定义 Generator
+const readFileThunk = thunkify(fs.readFile)
+    const gen = function* () {
+    const r1 = yield readFileThunk(&apos;data1.json&apos;)
+    console.log(r1.toString())
+    const r2 = yield readFileThunk(&apos;data2.json&apos;)
+    console.log(r2.toString())
+}
+const c = co(gen)
+</code></pre><p>而且const c = co(gen)返回的是一个Promise对象，可以接着这么写</p>
+<pre><code>c.then(data =&gt; {
+    console.log(&apos;结束&apos;)
+})
+</code></pre><h2 id="Koa中使用Generator"><a href="#Koa中使用Generator" class="headerlink" title="Koa中使用Generator"></a>Koa中使用Generator</h2><p>Koa第一版中大量使用了Generator，接下来我们去看看怎么使用的。</p>
+<h3 id="Koa中如何使用Generator"><a href="#Koa中如何使用Generator" class="headerlink" title="Koa中如何使用Generator"></a>Koa中如何使用Generator</h3><p>koa 是一个 web 框架，处理 http 请求，但是这里我们不去管它如何处理 http 请求，而是直接关注它使用Genertor的部分————中间件。<br>例如，我们现在要用 3 个Generator输出12345，我们如下代码这么写。</p>
+<pre><code>let info = &apos;&apos;
+function* g1() {
+    info += &apos;1&apos;  // 拼接 1
+    yield* g2()  // 拼接 234
+    info += &apos;5&apos;  // 拼接 5
+}
+function* g2() {
+    info += &apos;2&apos;  // 拼接 2
+    yield* g3()  // 拼接 3
+    info += &apos;4&apos;  // 拼接 4
+}
+function* g3() {
+    info += &apos;3&apos;  // 拼接 3
+}
+
+var g = g1()
+g.next()
+console.log(info)  // 12345
+</code></pre><p>但是如果用 koa 的 中间件 的思路来做，就需要如下这么写。</p>
+<pre><code>app.use(function *(next){
+    this.body = &apos;1&apos;;
+    yield next;
+    this.body += &apos;5&apos;;
+    console.log(this.body);
+});
+app.use(function *(next){
+    this.body += &apos;2&apos;;
+    yield next;
+    this.body += &apos;4&apos;;
+});
+app.use(function *(next){
+    this.body += &apos;3&apos;;
+});
+</code></pre><p>我们需要注意几点：</p>
+<ul>
+<li>app.use()中传入的每一个Generator就是一个 中间件，中间件按照传入的顺序排列，顺序不能乱</li>
+<li>每个中间件内部，next表示下一个中间件。yield next就是先将程序暂停，先去执行下一个中间件，等next被执行完之后，再回过头来执行当前代码的下一行。因此，koa 的中间件执行顺序是一种洋葱圈模型，不过这里看不懂也没问题。</li>
+<li>每个中间件内部，this可以共享变量。即第一个中间件改变了this的属性，在第二个中间件中可以看到效果。</li>
+</ul>
+<h3 id="Koa的这种机制如何实现的"><a href="#Koa的这种机制如何实现的" class="headerlink" title="Koa的这种机制如何实现的"></a>Koa的这种机制如何实现的</h3><p>我们封住个简单的Koa：</p>
+<pre><code>class MyKoa extends Object {
+    constructor(props) {
+        super(props);
+
+        // 存储所有的中间件
+        this.middlewares = []
+    }
+
+    // 注入中间件
+    use (generator) {
+        this.middlewares.push(generator)
+    }
+
+    // 执行中间件
+    listen () {
+        this._run()
+    }
+
+    _run () {
+        const ctx = this
+        const middlewares = ctx.middlewares
+        co(function* () {
+            let prev = null
+            let i = middlewares.length
+            //从最后一个中间件到第一个中间件的顺序开始遍历
+            while (i--) {
+                // ctx 作为函数执行时的 this 才能保证多个中间件中数据的共享
+                //prev 将前面一个中间件传递给当前中间件，才使得中间件里面的 next 指向下一个中间件
+                prev = middlewares[i].call(ctx, prev);
+            }
+            //执行第一个中间件
+            yield prev;
+        })
+    }
+}
+</code></pre><p>如何使用呢：</p>
+<pre><code>var app = new MyKoa();
+app.use(function *(next){
+    this.body = &apos;1&apos;;
+    yield next;
+    this.body += &apos;5&apos;;
+    console.log(this.body);  // 12345
+});
+app.use(function *(next){
+    this.body += &apos;2&apos;;
+    yield next;
+    this.body += &apos;4&apos;;
+});
+app.use(function *(next){
+    this.body += &apos;3&apos;;
+});
+app.listen();
+</code></pre>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-09-18T02:48:45.039Z" itemprop="dateUpdated">2018-09-18 10:48:45</time>
+</span><br>
+
+
+        
+        除特别说明外，文章均采用「知识共享 署名 - 非商业性 - 相同方式共享 4.0 协议」进行许可，转载需注明文章出处：<a href="/2018/09/18/javascript异步（三）/" target="_blank" rel="external">http://tanyibing.com/2018/09/18/javascript异步（三）/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://tanyibing.com">
+            <img src="/img/avatar.jpg" alt="Ice Panpan(Tan Yibing)">
+            Ice Panpan(Tan Yibing)
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/18/javascript异步（三）/&title=《javascript异步（三）》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/18/javascript异步（三）/&title=《javascript异步（三）》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/18/javascript异步（三）/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《javascript异步（三）》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/18/javascript异步（三）/&via=http://tanyibing.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/18/javascript异步（三）/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/09/17/javascript异步（二）/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">javascript异步（二）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "4rdRChJgomStDCzm3AqViMI2-gzGzoHsz",
+            appKey: "4cekfBC0l7ePUjMgoIGow6DC",
+            avatar: "mm",
+            placeholder: "要不要说点什么？",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Ice Panpan(Tan Yibing) &copy; 2017 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/18/javascript异步（三）/&title=《javascript异步（三）》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/18/javascript异步（三）/&title=《javascript异步（三）》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/18/javascript异步（三）/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《javascript异步（三）》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/18/javascript异步（三）/&via=http://tanyibing.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/18/javascript异步（三）/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aQW7DMAwF0dz/0i7QveX5pILW1HgV1KnNpwVDUfx88HX9XuRzenf9l82XDBkyXsu4lhcJ8e4562+m+Lvny5Ah4xwGSbIkFfIXr8PlscmQIUNGLQmmCZr/lwwZMmQQBr/bwciQIUNGbRNLAu2Xm1/fi8uQIeOFjL0HA3s//9n5hgwZMv4N4wovXtKt37VOzXFUMmTIGM2oNeXTltw3Uj+qcGXIkDGCwZMd/86usbCg6SZDhozRDN6s5038DqOzTDJkyJjKSJNdrRDkbTWSgh9KQxkyZIxjdA4AyOM6B5ZphDJkyJjNqBVzvGXPy0fOQ78eMmTIGMTgY14k1XaGvfrDajJkyJjHqI0+7G36pwtxOzMiQ4aMwxgkXZJNJr+btuSCk1gZMmS8nPGN5Jg26TpNPRkyZJzAeDgIBKGTJ/AEWhvgkCFDhgxSLPKwakNmDwsnQ4aM0QyeTHnRRu6mCTdO9zJkyBjHWIeeJtzaISVfRLQXlyFDxiBG0JMrtf5rZV862CFDhozTGOnwVtqM62+GH4pCGTJkjGOkDf30GCANLm38Ba03GTJkvJbRKc74pjRt9POtrAwZMk5gpAMWtYZaH7+hQJQhQ8bLGSQVBs0vgOy8S4YMGScz0hY/P3rsNN14VDJkyJCxd6PLS0y+lDJkyJBBisJ10J22Gto2y5Ah4wAG31gG5VpjmCw+VJAhQ8Zoxt7Zqr2Hjp3hDBkyZIxg/ABxxcxSx6gh5gAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
