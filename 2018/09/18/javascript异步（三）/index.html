@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="JavaScript">
-    <meta name="description" content="JavaScript异步（二）————Generator上次已经介绍过一点Generator对象的知识了，这次就继续说说Generator的应用吧。 Generator的应用使用next和yield传递参数我们已经知道，yield具有返回数据的功能，如下代码。yield后面的数据被返回，存放到返回结果中的value属性中。这算是一个方向的参数传递。 function* G() {     yiel">
+    <meta name="description" content="JavaScript异步（三）————Generator上次已经介绍过一点Generator对象的知识了，这次就继续说说Generator的应用吧。 Generator的应用使用next和yield传递参数我们已经知道，yield具有返回数据的功能，如下代码。yield后面的数据被返回，存放到返回结果中的value属性中。这算是一个方向的参数传递。 function* G() {     yiel">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript异步（三）">
 <meta property="og:url" content="http://tanyibing.com/2018/09/18/javascript异步（三）/index.html">
 <meta property="og:site_name" content="Ice Panpan&#39;s blog">
-<meta property="og:description" content="JavaScript异步（二）————Generator上次已经介绍过一点Generator对象的知识了，这次就继续说说Generator的应用吧。 Generator的应用使用next和yield传递参数我们已经知道，yield具有返回数据的功能，如下代码。yield后面的数据被返回，存放到返回结果中的value属性中。这算是一个方向的参数传递。 function* G() {     yiel">
+<meta property="og:description" content="JavaScript异步（三）————Generator上次已经介绍过一点Generator对象的知识了，这次就继续说说Generator的应用吧。 Generator的应用使用next和yield传递参数我们已经知道，yield具有返回数据的功能，如下代码。yield后面的数据被返回，存放到返回结果中的value属性中。这算是一个方向的参数传递。 function* G() {     yiel">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-18T02:48:45.039Z">
+<meta property="og:updated_time" content="2018-09-18T03:29:54.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript异步（三）">
-<meta name="twitter:description" content="JavaScript异步（二）————Generator上次已经介绍过一点Generator对象的知识了，这次就继续说说Generator的应用吧。 Generator的应用使用next和yield传递参数我们已经知道，yield具有返回数据的功能，如下代码。yield后面的数据被返回，存放到返回结果中的value属性中。这算是一个方向的参数传递。 function* G() {     yiel">
+<meta name="twitter:description" content="JavaScript异步（三）————Generator上次已经介绍过一点Generator对象的知识了，这次就继续说说Generator的应用吧。 Generator的应用使用next和yield传递参数我们已经知道，yield具有返回数据的功能，如下代码。yield后面的数据被返回，存放到返回结果中的value属性中。这算是一个方向的参数传递。 function* G() {     yiel">
     
         <link rel="alternate" type="application/atom+xml" title="Ice Panpan&#39;s blog" href="/atom.xml">
     
@@ -179,7 +179,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JavaScript异步（二）————Generator"><span class="post-toc-number">1.</span> <span class="post-toc-text">JavaScript异步（二）————Generator</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Generator的应用"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Generator的应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用next和yield传递参数"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">使用next和yield传递参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#for…of的应用"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">for…of的应用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#yield-嵌套Generator"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">yield*嵌套Generator</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generator中的this"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">Generator中的this</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Thunk函数"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Thunk函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#普通异步函数"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">普通异步函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#封装成Thunk函数"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">封装成Thunk函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用thunkify库"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">使用thunkify库</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Generator异步操作"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Generator异步操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generator中使用Thunk"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">Generator中使用Thunk</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#挨个读取两个文件的内容"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">挨个读取两个文件的内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自驱动流程"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">自驱动流程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#co库"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">co库</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Koa中使用Generator"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Koa中使用Generator</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Koa中如何使用Generator"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">Koa中如何使用Generator</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Koa的这种机制如何实现的"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">Koa的这种机制如何实现的</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JavaScript异步（三）————Generator"><span class="post-toc-number">1.</span> <span class="post-toc-text">JavaScript异步（三）————Generator</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Generator的应用"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Generator的应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用next和yield传递参数"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">使用next和yield传递参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#for…of的应用"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">for…of的应用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#yield-嵌套Generator"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">yield*嵌套Generator</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generator中的this"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">Generator中的this</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Thunk函数"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Thunk函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#普通异步函数"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">普通异步函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#封装成Thunk函数"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">封装成Thunk函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用thunkify库"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">使用thunkify库</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Generator异步操作"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Generator异步操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generator中使用Thunk"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">Generator中使用Thunk</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#挨个读取两个文件的内容"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">挨个读取两个文件的内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自驱动流程"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">自驱动流程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#co库"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">co库</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Koa中使用Generator"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Koa中使用Generator</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Koa中如何使用Generator"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">Koa中如何使用Generator</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Koa的这种机制如何实现的"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">Koa的这种机制如何实现的</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -205,8 +205,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="JavaScript异步（二）————Generator"><a href="#JavaScript异步（二）————Generator" class="headerlink" title="JavaScript异步（二）————Generator"></a>JavaScript异步（二）————Generator</h1><p>上次已经介绍过一点Generator对象的知识了，这次就继续说说Generator的应用吧。</p>
-<h2 id="Generator的应用"><a href="#Generator的应用" class="headerlink" title="Generator的应用"></a>Generator的应用</h2><h3 id="使用next和yield传递参数"><a href="#使用next和yield传递参数" class="headerlink" title="使用next和yield传递参数"></a>使用next和yield传递参数</h3><p>我们已经知道，yield具有返回数据的功能，如下代码。yield后面的数据被返回，存放到返回结果中的value属性中。这算是一个方向的参数传递。</p>
+            <h1 id="JavaScript异步（三）————Generator"><a href="#JavaScript异步（三）————Generator" class="headerlink" title="JavaScript异步（三）————Generator"></a>JavaScript异步（三）————Generator</h1><p>上次已经介绍过一点<code>Generator</code>对象的知识了，这次就继续说说Generator的应用吧。</p>
+<h2 id="Generator的应用"><a href="#Generator的应用" class="headerlink" title="Generator的应用"></a>Generator的应用</h2><h3 id="使用next和yield传递参数"><a href="#使用next和yield传递参数" class="headerlink" title="使用next和yield传递参数"></a>使用next和yield传递参数</h3><p>我们已经知道，<code>yield</code>具有返回数据的功能，如下代码。yield后面的数据被返回，存放到返回结果中的value属性中。这算是一个方向的参数传递。</p>
 <pre><code>function* G() {
     yield 100
 }
@@ -469,7 +469,7 @@ app.listen();
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-09-18T02:48:45.039Z" itemprop="dateUpdated">2018-09-18 10:48:45</time>
+    最后更新时间：<time datetime="2018-09-18T03:29:54.586Z" itemprop="dateUpdated">2018-09-18 11:29:54</time>
 </span><br>
 
 
@@ -550,7 +550,14 @@ app.listen();
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/09/18/javascript异步（四）/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">javascript异步（四）</h4>
+      </a>
+    </div>
   
 
   
