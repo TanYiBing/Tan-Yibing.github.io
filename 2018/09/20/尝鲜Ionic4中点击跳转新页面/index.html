@@ -13,25 +13,30 @@
     
     
     
-    <title>exports和module.exports的区别 | Ice Panpan&#39;s blog | Tan Yibing&#39;s blog</title>
+    <title>尝鲜Ionic4中点击跳转新页面 | Ice Panpan&#39;s blog | Tan Yibing&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="JavaScript,Node">
-    <meta name="description" content="exports和moduls.exports的区别每一个node.js执行文件，都会自动创建一个module对象，同时，module对象会创建一个叫exports的属性，初始化的值是{}： module.exports = {}; 这时我们使用exports看看： math.js  exports.add=function(arg1,arg2){     return arg1+arg2; };">
-<meta name="keywords" content="JavaScript,Node">
+    <meta name="keywords" content="Angular,Typescript,Ionic4">
+    <meta name="description" content="Ionic已经出了第四版了，不过还在测试阶段，那我们先来玩玩吧。 首先我们用命令行新建一个页面news，我们发现，这一版中，新建的page被直接加入到了路由当中：                                                                                                              也就是说我们可以直">
+<meta name="keywords" content="Angular,Typescript,Ionic4">
 <meta property="og:type" content="article">
-<meta property="og:title" content="exports和module.exports的区别">
-<meta property="og:url" content="http://tanyibing.com/2018/09/19/exports和module-exports的区别/index.html">
+<meta property="og:title" content="尝鲜Ionic4中点击跳转新页面">
+<meta property="og:url" content="http://tanyibing.com/2018/09/20/尝鲜Ionic4中点击跳转新页面/index.html">
 <meta property="og:site_name" content="Ice Panpan&#39;s blog">
-<meta property="og:description" content="exports和moduls.exports的区别每一个node.js执行文件，都会自动创建一个module对象，同时，module对象会创建一个叫exports的属性，初始化的值是{}： module.exports = {}; 这时我们使用exports看看： math.js  exports.add=function(arg1,arg2){     return arg1+arg2; };">
+<meta property="og:description" content="Ionic已经出了第四版了，不过还在测试阶段，那我们先来玩玩吧。 首先我们用命令行新建一个页面news，我们发现，这一版中，新建的page被直接加入到了路由当中：                                                                                                              也就是说我们可以直">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-19T01:57:34.856Z">
+<meta property="og:image" content="http://tanyibing.com/img/ionic/1.png">
+<meta property="og:image" content="http://tanyibing.com/img/ionic/2.png">
+<meta property="og:image" content="http://tanyibing.com/img/ionic/3.png">
+<meta property="og:image" content="http://tanyibing.com/img/ionic/4.png">
+<meta property="og:updated_time" content="2018-09-20T03:36:22.293Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="exports和module.exports的区别">
-<meta name="twitter:description" content="exports和moduls.exports的区别每一个node.js执行文件，都会自动创建一个module对象，同时，module对象会创建一个叫exports的属性，初始化的值是{}： module.exports = {}; 这时我们使用exports看看： math.js  exports.add=function(arg1,arg2){     return arg1+arg2; };">
+<meta name="twitter:title" content="尝鲜Ionic4中点击跳转新页面">
+<meta name="twitter:description" content="Ionic已经出了第四版了，不过还在测试阶段，那我们先来玩玩吧。 首先我们用命令行新建一个页面news，我们发现，这一版中，新建的page被直接加入到了路由当中：                                                                                                              也就是说我们可以直">
+<meta name="twitter:image" content="http://tanyibing.com/img/ionic/1.png">
     
         <link rel="alternate" type="application/atom+xml" title="Ice Panpan&#39;s blog" href="/atom.xml">
     
@@ -126,7 +131,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">exports和module.exports的区别</div>
+        <div class="flex-col header-title ellipsis">尝鲜Ionic4中点击跳转新页面</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -154,15 +159,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">exports和module.exports的区别</h1>
+        <h1 class="title">尝鲜Ionic4中点击跳转新页面</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-09-19T01:35:45.000Z" itemprop="datePublished" class="page-time">
-  2018-09-19
+                <time datetime="2018-09-20T03:15:48.000Z" itemprop="datePublished" class="page-time">
+  2018-09-20
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Node/">Node</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Ionic4/">Ionic4</a></li></ul>
 
             
         </h5>
@@ -176,24 +181,17 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#exports和moduls-exports的区别"><span class="post-toc-number">1.</span> <span class="post-toc-text">exports和moduls.exports的区别</span></a></li></ol>
-        </nav>
-    </aside>
 
-
-<article id="post-exports和module-exports的区别"
+<article id="post-尝鲜Ionic4中点击跳转新页面"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">exports和module.exports的区别</h1>
+        <h1 class="post-card-title">尝鲜Ionic4中点击跳转新页面</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-09-19 09:35:45" datetime="2018-09-19T01:35:45.000Z"  itemprop="datePublished">2018-09-19</time>
+            <time class="post-time" title="2018-09-20 11:15:48" datetime="2018-09-20T03:15:48.000Z"  itemprop="datePublished">2018-09-20</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Node/">Node</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Ionic4/">Ionic4</a></li></ul>
 
 
 
@@ -205,82 +203,49 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="exports和moduls-exports的区别"><a href="#exports和moduls-exports的区别" class="headerlink" title="exports和moduls.exports的区别"></a>exports和moduls.exports的区别</h1><p>每一个node.js执行文件，都会自动创建一个<code>module对象</code>，同时，module对象会创建一个叫<code>exports</code>的属性，初始化的值是{}：</p>
-<pre><code>module.exports = {};
-</code></pre><p>这时我们使用exports看看：</p>
-<pre><code>math.js
-
-exports.add=function(arg1,arg2){
-    return arg1+arg2;
-};
-exports.minus=function(arg1,arg2){
-    return arg1-arg2;
-};
-console.log(module);
-
-
-test.js
-
-var math=require(&apos;./math.js&apos;);
-console.log(&apos;math:&apos;+math);
-console.log(math.add(3,4));
-console.log(math.minus(5,3));
-</code></pre><p>控制台中信息:<br>module:</p>
-<pre><code>{ id: &apos;/home/chander-zhang/NodeJS/test/math.js&apos;,
-    exports: { add: [Function], minus: [Function] },
-    parent: 
-        { ... },
-    filename: &apos;/home/chander-zhang/NodeJS/test/math.js&apos;,
-    loaded: false,
-    children: [],
-    paths: [ 
-        &apos;/home/chander-zhang/NodeJS/test/node_modules&apos;,
-        &apos;/home/chander-zhang/NodeJS/node_modules&apos;,
-         &apos;/home/chander-zhang/node_modules&apos;,
-         &apos;/home/node_modules&apos;,
-         &apos;/node_modules&apos;
-    ] }
-</code></pre><p>math: </p>
-<pre><code>[object Object]
-</code></pre><p>这时的math是个对象，当我们使用module.exports时会怎么样：</p>
-<pre><code>math.js
-
-exports.add=function(arg1,arg2){
-    return arg1+arg2;
-};
-minus=function(arg1,arg2){
-    return arg1-arg2;
-};
-module.exports=minus;
-console.log(module);
-
-
-test.js
-
-var math=require(&apos;./math.js&apos;);
-console.log(&apos;math:&apos;+math);
-//console.log(math.add(3,4));
-console.log(math.minus(5,3));//相当于执行了 minus(5,3)
-</code></pre><p>控制台中打印出：、<br>module:</p>
-<pre><code>{ id: &apos;/home/chander-zhang/NodeJS/test/math.js&apos;,
-    exports: [Function],
-    parent: 
-        { ... },
-    filename: &apos;/home/chander-zhang/NodeJS/test/math.js&apos;,
-    loaded: false,
-    children: [],
-    paths: [ 
-        &apos;/home/chander-zhang/NodeJS/test/node_modules&apos;,
-         &apos;/home/chander-zhang/NodeJS/node_modules&apos;,
-         &apos;/home/chander-zhang/node_modules&apos;,
-         &apos;/home/node_modules&apos;,
-         &apos;/node_modules&apos;
-    ] }
-</code></pre><p>math: </p>
-<pre><code>function (arg1,arg2){
-    return arg1-arg2;
-}
-</code></pre><p>如果使用math.add()或math.minus()将会出错,因为此时math是一个函数. 即便module中出现了exports.add,由于为module.exports赋了值,也不能使用math.add().<br><strong>因为exports是指向module.exports的引用，而require（）返回的是module.exports而不是exports，当我们自己定义module.exports时就会覆盖自动生成的moudle.exports。</strong></p>
+            <p>Ionic已经出了第四版了，不过还在测试阶段，那我们先来玩玩吧。</p>
+<p>首先我们用命令行新建一个页面<code>news</code>，我们发现，这一版中，新建的page被直接加入到了路由当中：</p>
+<blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/ionic/1.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+</blockquote>
+<p>也就是说我们可以直接使用路由跳转，接下来我们在home页面中加一个按钮，并且给它个点击事件：</p>
+<blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/ionic/2.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+</blockquote>
+<p>此时我们到<code>home.page.ts</code>中去定义这个<code>goNews()</code>方法。我们手下需要在构造函数里面注册<code>NavController</code>，但是我接下来发现，这个类的<code>push</code>方法没定义，那我们去看下源码：</p>
+<blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/ionic/3.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+</blockquote>
+<p>果然是没有push方法了，但是有个<code>navigateForward</code>方法好像有那么点意思，试试吧：</p>
+<blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/ionic/4.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+</blockquote>
+<p>果然如此，没问题，现在我们就能够跳转啦。</p>
+<p><strong>官网文档现在还不是写的很清楚，想要正常使用还是要查查源码。</strong></p>
 
         </div>
 
@@ -289,12 +254,12 @@ console.log(math.minus(5,3));//相当于执行了 minus(5,3)
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-09-19T01:57:34.856Z" itemprop="dateUpdated">2018-09-19 09:57:34</time>
+    最后更新时间：<time datetime="2018-09-20T03:36:22.293Z" itemprop="dateUpdated">2018-09-20 11:36:22</time>
 </span><br>
 
 
         
-        除特别说明外，文章均采用「知识共享 署名 - 非商业性 - 相同方式共享 4.0 协议」进行许可，转载需注明文章出处：<a href="/2018/09/19/exports和module-exports的区别/" target="_blank" rel="external">http://tanyibing.com/2018/09/19/exports和module-exports的区别/</a>
+        除特别说明外，文章均采用「知识共享 署名 - 非商业性 - 相同方式共享 4.0 协议」进行许可，转载需注明文章出处：<a href="/2018/09/20/尝鲜Ionic4中点击跳转新页面/" target="_blank" rel="external">http://tanyibing.com/2018/09/20/尝鲜Ionic4中点击跳转新页面/</a>
         
     </div>
     
@@ -315,7 +280,7 @@ console.log(math.minus(5,3));//相当于执行了 minus(5,3)
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ionic4/">Ionic4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Typescript/">Typescript</a></li></ul>
 
 
             
@@ -325,7 +290,7 @@ console.log(math.minus(5,3));//相当于执行了 minus(5,3)
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/19/exports和module-exports的区别/&title=《exports和module.exports的区别》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/20/尝鲜Ionic4中点击跳转新页面/&title=《尝鲜Ionic4中点击跳转新页面》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -335,22 +300,22 @@ console.log(math.minus(5,3));//相当于执行了 minus(5,3)
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/19/exports和module-exports的区别/&title=《exports和module.exports的区别》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/20/尝鲜Ionic4中点击跳转新页面/&title=《尝鲜Ionic4中点击跳转新页面》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/19/exports和module-exports的区别/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/20/尝鲜Ionic4中点击跳转新页面/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《exports和module.exports的区别》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/19/exports和module-exports的区别/&via=http://tanyibing.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《尝鲜Ionic4中点击跳转新页面》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/20/尝鲜Ionic4中点击跳转新页面/&via=http://tanyibing.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/19/exports和module-exports的区别/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/20/尝鲜Ionic4中点击跳转新页面/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -370,21 +335,14 @@ console.log(math.minus(5,3));//相当于执行了 minus(5,3)
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2018/09/20/尝鲜Ionic4中点击跳转新页面/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">尝鲜Ionic4中点击跳转新页面</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/09/18/javascript异步（四）/" id="post-next" class="post-nav-link">
+      <a href="/2018/09/19/exports和module-exports的区别/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">javascript异步（四）</h4>
+        <h4 class="title">exports和module.exports的区别</h4>
       </a>
     </div>
   
@@ -505,7 +463,7 @@ console.log(math.minus(5,3));//相当于执行了 minus(5,3)
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/19/exports和module-exports的区别/&title=《exports和module.exports的区别》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/20/尝鲜Ionic4中点击跳转新页面/&title=《尝鲜Ionic4中点击跳转新页面》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -515,22 +473,22 @@ console.log(math.minus(5,3));//相当于执行了 minus(5,3)
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/19/exports和module-exports的区别/&title=《exports和module.exports的区别》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/20/尝鲜Ionic4中点击跳转新页面/&title=《尝鲜Ionic4中点击跳转新页面》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/19/exports和module-exports的区别/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/20/尝鲜Ionic4中点击跳转新页面/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《exports和module.exports的区别》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/19/exports和module-exports的区别/&via=http://tanyibing.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《尝鲜Ionic4中点击跳转新页面》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/20/尝鲜Ionic4中点击跳转新页面/&via=http://tanyibing.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/19/exports和module-exports的区别/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/20/尝鲜Ionic4中点击跳转新页面/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -541,7 +499,7 @@ console.log(math.minus(5,3));//相当于执行了 minus(5,3)
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvklEQVR42u3aQW7jMBAEwPz/01lgr1nJ3TOi4wVKp8B2RBYNiHTPfH3F1/ff6/6V+/9N7nB/z3zE+sLDw8MbTf3q+nnrq2Hyz1+NcrUc96/c3w0PDw/vHC+f7tW798O3I7ZLdvk6Hh4e3q/y9hO9fHyXR2o8PDy8/4V3T90c0JMNAA8PD+/TeMmENnHD/R1m1IezFjw8PLyY1xbAPuHvg/U9PDw8vEVVPbk2kcHsuFzMDQ8PD+8ALwkX8ng3H7ItdOWH+6LnCw8PD2/Em4UISUlsM928meDFF4CHh4f3Rt6zz9hkg5mV2V4sNx4eHt4BXpuF5rFC/vjel98eyKfx8PDw1tWiNnht49c81JhtTnh4eHjv5O1D24Q027XycOSyswwPDw9vzct/6rfR6qwVoD0PR5U9PDw8vAO8tsTVHmpnx/FNAHHZU4aHh4f3EC8vPiVH53xLSDae2cLh4eHhneMlx9+nSln5QiTvDvsj8PDw8B7ltbFsO4k2ntiPi4eHh3eCtwlPZ60DbbPCJvLAw8PDO8FrI4NZI9Qm7GiLcMV3iIeHh7fg5cfZdpjZJ5NNItlC8PDw8E7wnip0bQ7Es9Gj7w0PDw/vAC9vYNpEA20su9ly8PDw8N7DS1qXkoP1Uw/uFvZisfDw8PCO8fKSfztMXiprlzJ6Fw8PD+8Ab1PceirkbVsQ6ugBDw8P71Fevhnkj+M8qN1ExnVnGR4eHt4BXt1xUJa+8g2mzptn+wweHh7eCJZfmyJW3jg1ayD4x/3x8PDwDvA2m0eCmRXMkkWZxRx4eHh4T/HaA+6ecW5R8PDw8N7JSwZuA9y8USD/fB6C4OHh4X0ary3wt6WsPKF9cR88PDy8X+XlBbC2IaBdiCNHajw8PLwDYURe4krC1tko9aaCh4eHd4C3+al/P6GW0Ra6ZlsXHh4e3oL3B1nsxTqZPrsrAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvUlEQVR42u3awU7DMBAEUP7/p4vEjUPCzNpuKvFyqoAkfkHyprP79RUfr58j/5xcLTl3dv36wMPDwxst/eq4us39gmbXuTrr/tz7s/Dw8PDO8dpN+RUf+b3y3yZrxsPDw/sE3v0i8hJSLK58vcbDw8P7NF6yTbdLT0oCHh4e3mfykhAhebFeD4vzyHhz1oKHh4cX8040wE5/fri/h4eH9495r9GRn5s3uvLX5WKdeHh4eAd4SRxwJCCIY+L8J8V7Oh4eHt4CL9+CkwGCJFaYtb7y1tqvv8TDw8N7iHcPmwXBs9fuNgLGw8PDO8FLNuj2EbSBRd5U29B+w8PDw9vESy7XLigfO2hLS35fPDw8vHO8lYZW286fnTV7xHh4eHgneCtbeftqmz+m9r5/xLh4eHh4W3mzL/k5vh2fWglHLn+Lh4eHt5WXXzqJElaKSj4iUAQWeHh4eAd4eRnIY4sEvx4TF2UGDw8P7wAvf2GdbesrcUY+cBCtHw8PD2+Zt74RnxvAygPf+hsDHh4e3mHeejGYFYBZQbocHcDDw8PbxGv/dBaqrre42td0PDw8vHO89qv+bARqpYTMPhd5Mx4eHl7JWw9Y83GBWZutHfa6/Pfg4eHhbeW1Q1d53DDb9NthheG4AB4eHt4mXhJArDfD2gKQFKeoMODh4eFt4uWBwsqi8xGuPCau74WHh4e3iTeLCdowIo8n8gIQIfHw8PDewluJdGexQt3QygsbHh4e3lbeqzzaG8y2/naE6/JqeHh4eAd4sw23Hc/KH1DyCj4McPHw8PC28pJi0Laj8gGp/D+QFwY8PDy89/CSYtDGrHl4sbd5djkZgYeHh/cQbwbeFhyULTc8PDy8Z3kreUY7RjB7QHh4eHjv5CUvwfmIah7azka1inwaDw8P7wBv1gBrG10r41btUBceHh7eMd43/+PuAz0qYqgAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
