@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://tanyibing.com/img/material/1.png">
 <meta property="og:image" content="http://tanyibing.com/img/material/2.png">
-<meta property="og:updated_time" content="2018-09-21T07:03:02.754Z">
+<meta property="og:updated_time" content="2018-09-21T07:05:38.203Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="material中怎么使用自己下载的svg图标">
 <meta name="twitter:description" content="material是谷歌开发的很好看的一个框架，我就在我最近的项目中使用了这个框架，喜欢的童鞋可以去他们的官网看看：material.io 开发过程中我发现他们的图标库咩有阿里的那么丰富，于是想用自己下载的，那我该怎么操作呢？，下面介绍一下流程。 为了方便，我没有在需要的模块中反复的添加，而是创建了一个svg.util.ts,并选择在core module中一次性加载，省掉很多事。首先我需要在svg">
@@ -224,7 +224,7 @@
                 <div class="image-caption"></div>
             </figure>    
 </blockquote>
-<p>这样子差不多快可以了，但我们还需要在<code>core module</code>中引入HttpClient模块，因为需要依赖它，最后在<code>core module</code>的构造函数中调用就行了。</p>
+<p>这样子差不多快可以了，<strong>但我们还需要在<code>core module</code>中引入HttpClient模块（这一步必须要，否则会报错）</strong>，因为需要依赖它，最后在<code>core module</code>的构造函数中调用就行了。</p>
 <p>然后我们就能光明正大的使用啦：</p>
 <pre><code>&lt;mat-icon svgIcon=&apos;注册的名称&apos;&gt;&lt;/mat-icon&gt;
 </code></pre>
@@ -235,7 +235,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-09-21T07:03:02.754Z" itemprop="dateUpdated">2018-09-21 15:03:02</time>
+    最后更新时间：<time datetime="2018-09-21T07:05:38.203Z" itemprop="dateUpdated">2018-09-21 15:05:38</time>
 </span><br>
 
 
