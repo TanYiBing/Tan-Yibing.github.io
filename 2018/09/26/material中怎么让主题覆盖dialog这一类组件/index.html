@@ -13,28 +13,30 @@
     
     
     
-    <title>material中怎么使用自己下载的svg图标 | Ice Panpan&#39;s blog | Tan Yibing&#39;s blog</title>
+    <title>material中怎么让主题覆盖dialog这一类组件 | Ice Panpan&#39;s blog | Tan Yibing&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="Angular,Typescript,Material">
-    <meta name="description" content="material是谷歌开发的很好看的一个框架，我就在我最近的项目中使用了这个框架，喜欢的童鞋可以去他们的官网看看：material.io 开发过程中我发现他们的图标库咩有阿里的那么丰富，于是想用自己下载的，那我该怎么操作呢？，下面介绍一下流程。 为了方便，我没有在需要的模块中反复的添加，而是创建了一个svg.util.ts,并选择在core module中一次性加载，省掉很多事。首先我需要在svg">
+    <meta name="description" content="在material中很大一个特色就是我们可以根据自己的需求自定义自己想要的主题，我就大概讲讲怎么自定义吧，因为我的重点是怎么让主题覆盖一些组件。 怎么自定义主题呢？我自己写了一个theme.scss文件，代码如下：">
 <meta name="keywords" content="Angular,Typescript,Material">
 <meta property="og:type" content="article">
-<meta property="og:title" content="material中怎么使用自己下载的svg图标">
-<meta property="og:url" content="http://tanyibing.com/2018/09/21/material中怎么使用自己下载的svg图标/index.html">
+<meta property="og:title" content="material中怎么让主题覆盖dialog这一类组件">
+<meta property="og:url" content="http://tanyibing.com/2018/09/26/material中怎么让主题覆盖dialog这一类组件/index.html">
 <meta property="og:site_name" content="Ice Panpan&#39;s blog">
-<meta property="og:description" content="material是谷歌开发的很好看的一个框架，我就在我最近的项目中使用了这个框架，喜欢的童鞋可以去他们的官网看看：material.io 开发过程中我发现他们的图标库咩有阿里的那么丰富，于是想用自己下载的，那我该怎么操作呢？，下面介绍一下流程。 为了方便，我没有在需要的模块中反复的添加，而是创建了一个svg.util.ts,并选择在core module中一次性加载，省掉很多事。首先我需要在svg">
+<meta property="og:description" content="在material中很大一个特色就是我们可以根据自己的需求自定义自己想要的主题，我就大概讲讲怎么自定义吧，因为我的重点是怎么让主题覆盖一些组件。 怎么自定义主题呢？我自己写了一个theme.scss文件，代码如下：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://tanyibing.com/img/material/1.png">
-<meta property="og:image" content="http://tanyibing.com/img/material/2.png">
-<meta property="og:updated_time" content="2018-09-21T07:05:38.203Z">
+<meta property="og:image" content="http://tanyibing.com/img/material/3.png">
+<meta property="og:image" content="http://tanyibing.com/img/material/4.png">
+<meta property="og:image" content="http://tanyibing.com/img/material/6.png">
+<meta property="og:image" content="http://tanyibing.com/img/material/5.png">
+<meta property="og:updated_time" content="2018-09-27T01:25:38.769Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="material中怎么使用自己下载的svg图标">
-<meta name="twitter:description" content="material是谷歌开发的很好看的一个框架，我就在我最近的项目中使用了这个框架，喜欢的童鞋可以去他们的官网看看：material.io 开发过程中我发现他们的图标库咩有阿里的那么丰富，于是想用自己下载的，那我该怎么操作呢？，下面介绍一下流程。 为了方便，我没有在需要的模块中反复的添加，而是创建了一个svg.util.ts,并选择在core module中一次性加载，省掉很多事。首先我需要在svg">
-<meta name="twitter:image" content="http://tanyibing.com/img/material/1.png">
+<meta name="twitter:title" content="material中怎么让主题覆盖dialog这一类组件">
+<meta name="twitter:description" content="在material中很大一个特色就是我们可以根据自己的需求自定义自己想要的主题，我就大概讲讲怎么自定义吧，因为我的重点是怎么让主题覆盖一些组件。 怎么自定义主题呢？我自己写了一个theme.scss文件，代码如下：">
+<meta name="twitter:image" content="http://tanyibing.com/img/material/3.png">
     
         <link rel="alternate" type="application/atom+xml" title="Ice Panpan&#39;s blog" href="/atom.xml">
     
@@ -129,7 +131,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">material中怎么使用自己下载的svg图标</div>
+        <div class="flex-col header-title ellipsis">material中怎么让主题覆盖dialog这一类组件</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -157,11 +159,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">material中怎么使用自己下载的svg图标</h1>
+        <h1 class="title">material中怎么让主题覆盖dialog这一类组件</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-09-21T06:37:43.000Z" itemprop="datePublished" class="page-time">
-  2018-09-21
+                <time datetime="2018-09-26T14:13:15.000Z" itemprop="datePublished" class="page-time">
+  2018-09-26
 </time>
 
 
@@ -180,13 +182,13 @@
 <div class="container body-wrap">
     
 
-<article id="post-material中怎么使用自己下载的svg图标"
+<article id="post-material中怎么让主题覆盖dialog这一类组件"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">material中怎么使用自己下载的svg图标</h1>
+        <h1 class="post-card-title">material中怎么让主题覆盖dialog这一类组件</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-09-21 14:37:43" datetime="2018-09-21T06:37:43.000Z"  itemprop="datePublished">2018-09-21</time>
+            <time class="post-time" title="2018-09-26 22:13:15" datetime="2018-09-26T14:13:15.000Z"  itemprop="datePublished">2018-09-26</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Material/">Material</a></li></ul>
@@ -201,33 +203,49 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><code>material</code>是谷歌开发的很好看的一个框架，我就在我最近的项目中使用了这个框架，喜欢的童鞋可以去他们的官网看看：<a href="https://material.io/" target="_blank" rel="noopener">material.io</a></p>
-<p>开发过程中我发现他们的图标库咩有阿里的那么丰富，于是想用自己下载的，那我该怎么操作呢？，下面介绍一下流程。</p>
-<p>为了方便，我没有在需要的模块中反复的添加，而是创建了一个<code>svg.util.ts</code>,并选择在<code>core module</code>中一次性加载，省掉很多事。首先我需要在<code>svg.util.ts</code>中引入必须的模块：</p>
+            <p>在<code>material</code>中很大一个特色就是我们可以根据自己的需求自定义自己想要的主题，我就大概讲讲怎么自定义吧，因为我的重点是怎么让主题覆盖一些组件。</p>
+<p>怎么自定义主题呢？我自己写了一个<code>theme.scss</code>文件，代码如下：</p>
 <blockquote>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/material/1.png" alt="" title="">
+                    <img src="/img/material/3.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 </blockquote>
-<p>这两个模块是核心模块，一个负责注册新加入的svg图标，一个是为了防止XSS漏洞的将URL设为信任对象。</p>
-<p>接下来就将我们的图标都注册进去：</p>
+<p>首先导入 <code>mat-core（）</code> sass 混合。这包括多个组件使用的所有常见样式。这应该只在你的应用程序中包含一次。如果这个mixin包含多次，你的应用程序将最终得到这些常用样式的多个副本。将主题数据结构定义为多个调色板的组合。可以使用 mat-light-theme 方法或 mat-dark-theme 方法创建此对象。然后将方法的输出传递给 angular-material-theme 混合，它将输出主题的所有对应样式。</p>
+<p>然后我们需要在<code>style.scss</code>全局样式下引入这个文件，这样就可以自由使用了。</p>
+<p>但是我们发现，例如dialog这些组件无法渲染自定义的主题，我们该怎么解决呢？其实也很简单，我们只需要在最外层的容器上加上一句话：</p>
 <blockquote>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/material/2.png" alt="" title="">
+                    <img src="/img/material/4.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
-            </figure>    
+            </figure>
 </blockquote>
-<p>这样子差不多快可以了，<strong>但我们还需要在<code>core module</code>中引入HttpClient模块（这一步必须要，否则会报错）</strong>，因为需要依赖它，最后在<code>core module</code>的构造函数中调用就行了。</p>
-<p>然后我们就能光明正大的使用啦：</p>
-<pre><code>&lt;mat-icon svgIcon=&apos;注册的名称&apos;&gt;&lt;/mat-icon&gt;
-</code></pre>
+<p>这样之后就大功告成了，我们原先的是背景有黑夜主题，但是dialog没有主题，然后就成功的给dialog也加上了主题。</p>
+<blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/material/6.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+</blockquote>
+<p>上面是没有主题的样子，背景是黑的，dialog是白的，不协调。接下来看看完成之后的;</p>
+<blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/material/5.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></blockquote>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -235,12 +253,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-09-21T07:05:38.203Z" itemprop="dateUpdated">2018-09-21 15:05:38</time>
+    最后更新时间：<time datetime="2018-09-27T01:25:38.769Z" itemprop="dateUpdated">2018-09-27 09:25:38</time>
 </span><br>
 
 
         
-        除特别说明外，文章均采用「知识共享 署名 - 非商业性 - 相同方式共享 4.0 协议」进行许可，转载需注明文章出处：<a href="/2018/09/21/material中怎么使用自己下载的svg图标/" target="_blank" rel="external">http://tanyibing.com/2018/09/21/material中怎么使用自己下载的svg图标/</a>
+        除特别说明外，文章均采用「知识共享 署名 - 非商业性 - 相同方式共享 4.0 协议」进行许可，转载需注明文章出处：<a href="/2018/09/26/material中怎么让主题覆盖dialog这一类组件/" target="_blank" rel="external">http://tanyibing.com/2018/09/26/material中怎么让主题覆盖dialog这一类组件/</a>
         
     </div>
     
@@ -271,7 +289,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/21/material中怎么使用自己下载的svg图标/&title=《material中怎么使用自己下载的svg图标》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/26/material中怎么让主题覆盖dialog这一类组件/&title=《material中怎么让主题覆盖dialog这一类组件》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -281,22 +299,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/21/material中怎么使用自己下载的svg图标/&title=《material中怎么使用自己下载的svg图标》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/26/material中怎么让主题覆盖dialog这一类组件/&title=《material中怎么让主题覆盖dialog这一类组件》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/21/material中怎么使用自己下载的svg图标/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/26/material中怎么让主题覆盖dialog这一类组件/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《material中怎么使用自己下载的svg图标》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/21/material中怎么使用自己下载的svg图标/&via=http://tanyibing.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《material中怎么让主题覆盖dialog这一类组件》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/26/material中怎么让主题覆盖dialog这一类组件/&via=http://tanyibing.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/21/material中怎么使用自己下载的svg图标/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/26/material中怎么让主题覆盖dialog这一类组件/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -316,21 +334,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2018/09/26/material中怎么让主题覆盖dialog这一类组件/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">material中怎么让主题覆盖dialog这一类组件</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/09/20/尝鲜Ionic4中点击跳转新页面/" id="post-next" class="post-nav-link">
+      <a href="/2018/09/21/material中怎么使用自己下载的svg图标/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">尝鲜Ionic4中点击跳转新页面</h4>
+        <h4 class="title">material中怎么使用自己下载的svg图标</h4>
       </a>
     </div>
   
@@ -451,7 +462,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/21/material中怎么使用自己下载的svg图标/&title=《material中怎么使用自己下载的svg图标》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/26/material中怎么让主题覆盖dialog这一类组件/&title=《material中怎么让主题覆盖dialog这一类组件》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -461,22 +472,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/21/material中怎么使用自己下载的svg图标/&title=《material中怎么使用自己下载的svg图标》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/26/material中怎么让主题覆盖dialog这一类组件/&title=《material中怎么让主题覆盖dialog这一类组件》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/21/material中怎么使用自己下载的svg图标/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/26/material中怎么让主题覆盖dialog这一类组件/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《material中怎么使用自己下载的svg图标》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/21/material中怎么使用自己下载的svg图标/&via=http://tanyibing.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《material中怎么让主题覆盖dialog这一类组件》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/26/material中怎么让主题覆盖dialog这一类组件/&via=http://tanyibing.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/21/material中怎么使用自己下载的svg图标/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/26/material中怎么让主题覆盖dialog这一类组件/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -487,7 +498,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3aQW4DMQgF0Nz/0qnUVdVqkg+YdBbPqyqJZvy8MBR4POL1/F7JJz/X318m3+Z7OLbw8PDwWlu/WsnWr759Dei9Jd8zHh4e3jbv9UVc3frkKk/CRrJnPDw8vDvw5ttKEutJ8o2Hh4d3T94zWPkv8+CBh4eHdzdestFqujwPFb2Dw8PDw9vmbRQItv9e7O/h4eHhDbrqyYV7qnmWjyMUdouHh4e3wMuHparDWL3jSNpsSRR4VGfB8PDw8Iq8atE2GS+YH1meZEdvwcPDwzvEmweDaoqcBKTJAMHlfwx4eHh4y7wkGOTBY9IMq5ZFosCAh4eHd5TXazUlTziVlBdCCx4eHt4CL99QDk6S7N6MQzVc4eHh4W3w9l6cJ+JJQGoeEx4eHt4Cr3rh9oq8eeKelH0LsQ4PDw9vgTdp0icjAnmZeDKgsDKDgIeHh1ccAkiu3bxtlifKeRsseTIeHh7eHm+j4dRroeUjXFEowsPDw1vmJQWCXtJcLTdUm22XCjw8PLwFXq/lXy09ROlvcbvJTvDw8PC2eVXYyvU9Tr7x8PDwtnnVS7x3NVdT9mSIISqC4OHh4X2El78+H4pKtpi/vRA28PDw8JZ51XZUrzGWz0cdnozAw8PDO8RLNtpLcHtl1vyAqo03PDw8vFO8Uw2nasEiv8qrB4GHh4f3Sd6kfDBJc/PWWj7OhYeHh7fH66189Cppg5Wz/riogYeHh7fBexZXUg7olWt75d03z8TDw8Nb4M3jSe8I8hGE3vDW41S4xMPDwxs0varbmoeHZgevmljj4eHhDXj5BZ18MikrHE7T8fDw8P6VNx8UyNtXeVPtzRHg4eHh3YBXDRKnulHVJhweHh7eNi8vRuRHcKolNin+4uHh4W3wJg2wXssqL3Pk41kr/T08PDy838/5AmV3xTrU1KYnAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADLElEQVR42u3a0W6jQAwF0Pz/T2dfK3WBa5tKwTk8VWkKcwapV2P79Yqv94/r6POfv30fXEd3O//b8yf+/s5tFzY2NvZD2O/TK1/K+f2TzxPM+dMTCzY2NvZW9vkDki3I4+o8xibbmm8WNjY29jezq8gElm9HErTY2NjY2L0Ay2MpLwxVSdjY2NjfzJ4EQ68Ild+zd+y5rZaGjY2N/fHsvCv6+T//SX8bGxsb+4PZ7+KVt2mrQzb3huWFAhsbG3sROw+A3qbc1aDtFaQu1oONjY29gt1ryuZtg/nQT+/IcbFybGxs7EXspJSfPDLfrHk7oTq+c7hybGxs7HXsahhUv9Mb1qk2bgt4bGxs7BXs3k2rgVQt8ecHnmoMY2NjY29lVws01WNAtbRUjcDqaBE2Njb2Jnb+v73X0M0X1wvC/CVFe4mNjY39WHbvFvM2bS/Y8ti7WAM2Njb2Onb12NAbpqn2LiZFqHJFDRsbG/uB7DyQkuBJ7j8/EfSeeJjY2NjY2CvYk1GbHNMs3Af3LL8GbGxs7EXs6jGg2gzI2wnVFsI8ULGxsbF3sHtlmjyK8uGeKnh0iMLGxsb+Gnay9GrI5cFTHdYpHE6wsbGxl7KrDdpkm5KIql7VYZ3/rBYbGxt7ETs/QvSK8tVmbXVAJy88lbsN2NjY2A9k98pD+WblyOTQ0jvqXHRFsLGxsR/IrlLnEZWP70zuHL1nbGxs7EXsfOQlbwk3W7A3bdzFC8PGxsZex65+0mvHTgaAkhAtNIyxsbGxF7F7wzHV4Z55q6B3jIneOTY2NvZS9l8sN9+yfA3V577mj8TGxsb+YHZeVJofXV6Da95CwMbGxv4edjKg02vB5seVSVHpIvawsbGx17EnMTZpwfbGKHurwsbGxt7HfhevahT1QjEf+uy1jbGxsbE3sXsBkCwu/23yV/kBI28MY2NjY29iVwOpGiG9aOw1CQoBho2Njb2OPS/l9Las2r7NsxcbGxsbe1KgmZer8rU1y1jY2NjY2KdForzwlGTK5PvY2NjY38OeREseb/N2wmQl2NjY2FvZvQLNvOifDOXkTd/edmNjY2M/nP0PZjmRzdIS+vEAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
