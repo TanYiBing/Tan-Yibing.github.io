@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>angular中自定义表单控件 | Ice Panpan&#39;s blog | Tan Yibing&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Angular,Typescript,Material">
+    <meta name="description" content="angular中有两种表单，一种是模版驱动的表单，还有一种是响应式的表单。如果我们的表单比较简单的话我们可以使用模版驱动型表单，但是一旦我么的表单复杂起来，那么响应式表单是我们的首选。 但是一旦我们的表单过于复杂之后，我们就需要将很多的逻辑写在一起，对于我们来说是件很糟糕的事情，所以，我们需要把复杂问题简单化，因此，我们可以自定义表单控件。 我需要实现一个如下的头像选择效果：">
+<meta name="keywords" content="Angular,Typescript,Material">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular中自定义表单控件">
+<meta property="og:url" content="http://tanyibing.com/2018/09/28/angular中自定义表单控件/index.html">
+<meta property="og:site_name" content="Ice Panpan&#39;s blog">
+<meta property="og:description" content="angular中有两种表单，一种是模版驱动的表单，还有一种是响应式的表单。如果我们的表单比较简单的话我们可以使用模版驱动型表单，但是一旦我么的表单复杂起来，那么响应式表单是我们的首选。 但是一旦我们的表单过于复杂之后，我们就需要将很多的逻辑写在一起，对于我们来说是件很糟糕的事情，所以，我们需要把复杂问题简单化，因此，我们可以自定义表单控件。 我需要实现一个如下的头像选择效果：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://tanyibing.com/img/material/8.png">
+<meta property="og:updated_time" content="2018-10-02T13:30:41.209Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angular中自定义表单控件">
+<meta name="twitter:description" content="angular中有两种表单，一种是模版驱动的表单，还有一种是响应式的表单。如果我们的表单比较简单的话我们可以使用模版驱动型表单，但是一旦我么的表单复杂起来，那么响应式表单是我们的首选。 但是一旦我们的表单过于复杂之后，我们就需要将很多的逻辑写在一起，对于我们来说是件很糟糕的事情，所以，我们需要把复杂问题简单化，因此，我们可以自定义表单控件。 我需要实现一个如下的头像选择效果：">
+<meta name="twitter:image" content="http://tanyibing.com/img/material/8.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Ice Panpan&#39;s blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/avatar_before.jpg">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Ice Panpan(Tan Yibing)</h5>
+          <a href="mailto:tanyibing1995@gmail.com" title="tanyibing1995@gmail.com" class="mail">tanyibing1995@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/TanYiBing" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/u/5341296740?refer_flag=1005055010_" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/friendLink"  >
+                <i class="icon icon-lg icon-users"></i>
+                友链
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">angular中自定义表单控件</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+        
+            <a id="header-high" style="text-decoration: none; margin-left:12px; width:71px; margin-right:5px" class="header-icon waves-effect waves-circle waves-light" onclick="javascript:(    /*     * Copyright (C) 2015 Rocko (rocko.xyz) <rocko.zxp@gmail.com>     *     * Licensed under the Apache License, Version 2.0 (the 'License');     * you may not use this file except in compliance with the License.     * You may obtain a copy of the License at     *     *      http://www.apache.org/licenses/LICENSE-2.0     *     * Unless required by applicable law or agreed to in writing, software     * distributed under the License is distributed on an 'AS IS' BASIS,     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.     * See the License for the specific language governing permissions and     * limitations under the License.     */    function go() {        function c() {        var e = document.createElement('link');        e.setAttribute('type', 'text/css');        e.setAttribute('rel', 'stylesheet');        e.setAttribute('href', f);        e.setAttribute('class', l);        document.body.appendChild(e)    }     function h() {        var e = document.getElementsByClassName(l);        for (var t = 0; t < e.length; t++) {            document.body.removeChild(e[t])        }    }     function p() {        var e = document.createElement('div');        e.setAttribute('class', a);        document.body.appendChild(e);        setTimeout(function() {            document.body.removeChild(e)        }, 100)    }     function d(e) {        return {            height : e.offsetHeight,            width : e.offsetWidth        }    }     function v(i) {        var s = d(i);        return s.height > e &amp;&amp; s.height < n &amp;&amp; s.width > t &amp;&amp; s.width < r    }     function m(e) {        var t = e;        var n = 0;        while (!!t) {            n += t.offsetTop;            t = t.offsetParent        }        return n    }     function g() {        var e = document.documentElement;        if (!!window.innerWidth) {            return window.innerHeight        } else if (e &amp;&amp; !isNaN(e.clientHeight)) {            return e.clientHeight        }        return 0    }     function y() {        if (window.pageYOffset) {            return window.pageYOffset        }        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)    }     function E(e) {        var t = m(e);        return t >= w &amp;&amp; t <= b + w    }     var songs = [               'http://rocko-blog.qiniudn.com/Music-Wake-Live.mp3' ,     'http://rocko-blog.qiniudn.com/Music-Fashion_Show.mp3'           ,                'http://rocko-blog.qiniudn.com/Music-outside.mp3',                'http://rocko-blog.qiniudn.com/Music-sunburst.mp3'    ];    function S() {        var e = document.getElementById('audio_element_id');        if(e != null){            var index = parseInt(e.getAttribute('curSongIndex'));            if(index > songs.length - 2) {                index = 0;            } else {                index++;            }            e.setAttribute('curSongIndex', index);            N();        }        e.src = i;        e.play()    }     function x(e) {        e.className += ' ' + s + ' ' + o    }     function T(e) {        e.className += ' ' + s + ' ' + u[Math.floor(Math.random() * u.length)]    }     function N() {        var e = document.getElementsByClassName(s);        var t = new RegExp('\\b' + s + '\\b');        for (var n = 0; n < e.length; ) {            e[n].className = e[n].className.replace(t, '')        }    }    function initAudioEle() {        var e = document.getElementById('audio_element_id');        if(e === null){            e = document.createElement('audio');            e.setAttribute('class', l);            e.setAttribute('curSongIndex', 0);            e.id = 'audio_element_id';            e.loop = false;            e.bgcolor = 0;            e.addEventListener('canplay', function() {            setTimeout(function() {                x(k)            }, 500);            setTimeout(function() {                N();                p();                for (var e = 0; e < O.length; e++) {                    T(O[e])                }            }, 15500)        }, true);        e.addEventListener('ended', function() {            N();            h();            go();        }, true);        e.innerHTML = ' <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>';        document.body.appendChild(e);        }    }        initAudioEle();    var e = 30;    var t = 30;    var n = 350;    var r = 350;    var curSongIndex = parseInt(document.getElementById('audio_element_id').getAttribute('curSongIndex'));    var i = songs[curSongIndex];        var s = 'mw-harlem_shake_me';    var o = 'im_first';    var u = ['im_drunk', 'im_baked', 'im_trippin', 'im_blown'];    var a = 'mw-strobe_light';    var f = 'https://rocko.xyz/css/harlem-shake-style.css';        var l = 'mw_added_css';    var b = g();    var w = y();    var C = document.getElementsByTagName('*');    var k = null;    for (var L = 0; L < C.length; L++) {        var A = C[L];        if (v(A)) {            if (E(A)) {                k = A;                break            }        }    }    if (A === null) {        console.warn('Could not find a node of the right size. Please try a different page.');        return    }    c();    S();    var O = [];    for (var L = 0; L < C.length; L++) {        var A = C[L];        if (v(A)) {            O.push(A)        }    }    })()">
+        <i class="icon icon-lg icon-music"></i> High~
+        </a>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">angular中自定义表单控件</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-28T15:51:23.000Z" itemprop="datePublished" class="page-time">
+  2018-09-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Angular/">Angular</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-angular中自定义表单控件"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">angular中自定义表单控件</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-28 23:51:23" datetime="2018-09-28T15:51:23.000Z"  itemprop="datePublished">2018-09-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Angular/">Angular</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>angular中有两种表单，一种是模版驱动的表单，还有一种是响应式的表单。如果我们的表单比较简单的话我们可以使用模版驱动型表单，但是一旦我么的表单复杂起来，那么响应式表单是我们的首选。</p>
+<p>但是一旦我们的表单过于复杂之后，我们就需要将很多的逻辑写在一起，对于我们来说是件很糟糕的事情，所以，我们需要<code>把复杂问题简单化</code>，因此，我们可以自定义表单控件。</p>
+<p>我需要实现一个如下的头像选择效果：</p>
+<blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/material/8.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+</blockquote>
+<p>如果光是添加头像我们可以直接写，没必要写成控件，但是，我在之后的项目中可能也想给我其他表单添加图片也实现这样的功能，那我就需要封装一下，方便以后复用。</p>
+<p>我在此就写一些删减后的代码，理清思路。首先我们给出我们自定义表单控件的模板：</p>
+<pre><code>&lt;div&gt;
+    &lt;mat-icon *ngIf=&quot;useSvgIcon else imgSelect&quot;&gt;&lt;/mat-icon&gt;
+    &lt;ng-template #imgSelect&gt;
+        &lt;img [src]=&quot;selected&quot; alt=&quot;image selected&quot;&gt;
+    &lt;/ng-template&gt;
+&lt;/div&gt;
+&lt;div class=&quot;scroll-container&quot;&gt;
+    &lt;mat-grid-list&gt;
+    &lt;mat-grid-tile *ngFor=&quot;let item of items&quot;&gt;
+      &lt;div class=&quot;image-container&quot;&gt;
+        &lt;mat-icon [svgIcon]=&quot;item&quot; *ngIf=&quot;useSvgIcon else imgItem&quot;&gt;&lt;/mat-icon&gt;
+        &lt;ng-template #imgItem&gt;
+          &lt;img [src]=&quot;item&quot; alt=&quot;image item&quot;&gt;
+        &lt;/ng-template&gt;
+    &lt;/mat-grid-tile&gt;
+&lt;/div&gt;
+</code></pre><p>第一个div是我们展示选中的，下面的是展示所有头像，使用的是material中的<code>gridlist</code>。</p>
+<p>我们想要自定义表单控件，最重要的就是实现<code>ControlValueAccessor</code>接口，例子如下：</p>
+<pre><code>import { Component, forwardRef } from &apos;@angular/core&apos;;
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from &apos;@angular/forms&apos;;
+
+@Component({
+    selector: &apos;app-image-list-select&apos;,
+    templateUrl: &apos;./image-list-select.component.html&apos;,
+    styleUrls: [&apos;./image-list-select.component.scss&apos;],
+    providers: [
+        {
+        provide: NG_VALUE_ACCESSOR,
+        useExisting: forwardRef(() =&gt; ImageListSelectComponent),
+        multi: true // 允许令牌多对一
+        }
+    ]
+})
+export class ImageListSelectComponent implements ControlValueAccessor {
+    constructor() { }
+
+    // 这里是做一个空函数体，真正使用的方法在 registerOnChange 中
+    // 由框架注册，然后我们使用它把变化发回表单
+    // 注意，和 EventEmitter 尽管很像，但发送回的对象不同
+    private propagateChange = (_: any) =&gt; {};
+
+    // 写入控件值
+    writeValue(obj: any): void {}
+
+    // 当表单控件值改变时，函数 fn 会被调用
+    // 这也是我们把变化 emit 回表单的机制
+    registerOnChange(fn: any): void {
+        this.propagateChange = fn;
+    }
+
+    // 这里没有使用，用于注册 touched 状态
+    registerOnTouched(fn: any): void {}
+
+    setDisabledState?(isDisabled: boolean): void {}
+}
+</code></pre><p>要实现<code>ControlValueAccessor</code>接口，我们就需要实现上面四中方法，在<code>writeValue</code>，我们就能获取到控件中值的值，然后我们通过<code>private propagateChange = (_: any) =&gt; {};</code>这个类似于<code>EventEmitter</code>的函数将值暴露出去。差不多就行了。</p>
+<p>想要了解这个项目的可以去我的github上看我的项目：<a href="https://github.com/TanYiBing/taskmgr" target="_blank" rel="noopener">这是地址</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-10-02T13:30:41.209Z" itemprop="dateUpdated">2018-10-02 21:30:41</time>
+</span><br>
+
+
+        
+        除特别说明外，文章均采用「知识共享 署名 - 非商业性 - 相同方式共享 4.0 协议」进行许可，转载需注明文章出处：<a href="/2018/09/28/angular中自定义表单控件/" target="_blank" rel="external">http://tanyibing.com/2018/09/28/angular中自定义表单控件/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://tanyibing.com">
+            <img src="/img/avatar.jpg" alt="Ice Panpan(Tan Yibing)">
+            Ice Panpan(Tan Yibing)
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Material/">Material</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Typescript/">Typescript</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/28/angular中自定义表单控件/&title=《angular中自定义表单控件》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/28/angular中自定义表单控件/&title=《angular中自定义表单控件》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/28/angular中自定义表单控件/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《angular中自定义表单控件》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/28/angular中自定义表单控件/&via=http://tanyibing.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/28/angular中自定义表单控件/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/09/29/使用Rx-js和json-server模拟随机获取内容/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">使用Rx.js和json-server模拟随机获取内容</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/09/27/angular中写自己的指令/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">angular中写自己的指令</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "4rdRChJgomStDCzm3AqViMI2-gzGzoHsz",
+            appKey: "4cekfBC0l7ePUjMgoIGow6DC",
+            avatar: "mm",
+            placeholder: "要不要说点什么？",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Ice Panpan(Tan Yibing) &copy; 2017 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tanyibing.com/2018/09/28/angular中自定义表单控件/&title=《angular中自定义表单控件》 — Ice Panpan's blog&pic=http://tanyibing.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tanyibing.com/2018/09/28/angular中自定义表单控件/&title=《angular中自定义表单控件》 — Ice Panpan's blog&source=I'm TanYiBing,my email is 820567197@qq.com&tanyibing1995@gmail.com,my qq is 8..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tanyibing.com/2018/09/28/angular中自定义表单控件/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《angular中自定义表单控件》 — Ice Panpan's blog&url=http://tanyibing.com/2018/09/28/angular中自定义表单控件/&via=http://tanyibing.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tanyibing.com/2018/09/28/angular中自定义表单控件/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3aQW4bMQwF0Nz/0ilQZFHAsfxJijEavFkNZGesx8VQIfnxEV+ff69/75+tPH76+ITH9fNfPfv02oWHh4fX2vp5i+f1czjOATqTqgH9Zj94eHh4a7w8GVQ32vvmrbDi4eHhvZeXHHarL/QkkST7wcPDw/sdvLwyMN8PHh4e3s/zkmJEDqgelPNrsdaCh4eHF/N6DbD33q/39/Dw8PBaXfXqS3nStb+bPL6eg4eHh7fAm5cVzi3/fL1Xnkh+BQ8PD+8urzo0kP9kdbt5ibYQDjw8PLwF3q0hgHwlwZ9f9/kRHA8PD2+bV00JvYNvnoTy8seLfwbw8PDwFnj5wFN1aKCXJHpl4nIs8fDw8Fq7Sl6ptw7E89GopADxtL+Hh4eHd4mXbzcJQe87eQG3mfHw8PDwFniTV/mkJDEZESiXIfDw8PAu8fIfqBZVk2Rwq3x8IX54eHh4LV5vE9WnJUko/86Lezw8PLwF3jwZ5Phqg62KfxpKPDw8vKu86qYnZYJkvdqEe/EEPDw8vAVe9f/33jcn6ac6vhCNYeHh4eGNedXEkEer+fqOu//R6AMeHh7eGq/3Ek9a+NVwnNnNQSs8PDy8q7x5gbVaip0/rWzBw8PDu8TbKN1WSwz5AFa5JYaHh4e3wMtbU731SZGi15zDw8PD2+YlW7k1htUrKPTGrfDw8PB+hterf+7VUfNBgaf3eHh4eAu8vKlfXblbepikEDw8PLy7vM/i1dvEJHCTAOHh4eFt8O4eiKvH4qTUmx+amzA8PDy8cetrIxn0ChB5YhgdrPHw8PAGvOpRuHf8TXJUdfzrxTEdDw8P7628yWhUdQArD26h9YWHh4f3n/CSJ5wD0Ry6wsPDw1vmzYsRd5HXSht4eHh4C7xqA6xa0s3LFndLunh4eHgLvD+4QNpPiKnXcwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
