@@ -28,26 +28,26 @@
 <meta property="og:site_name" content="Ice Panpan&#39;s blog">
 <meta property="og:description" content="[翻译] 调试Rxjs（一）：工具 原文：Debugging RxJS, Part 1: Tooling  我是一个 Rxjs 的信仰者，我在我所有的项目中都使用 Rxjs。有了 Rxjs，我发现很多曾经觉得乏味的事都变得痛快。但是有一件事不是这样：调试。 Rxjs 中异步的本质在组合之后让调试变得更具挑战性：没有太多的状态（state）供你检查，并且调用堆栈（call stack）也帮不了太大的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/【翻译】调试Rxjs（一）：工具/img/rxjs/1.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/【翻译】调试Rxjs（一）：工具/img/rxjs/2.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/【翻译】调试Rxjs（一）：工具/img/rxjs/3.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/【翻译】调试Rxjs（一）：工具/img/rxjs/4.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/【翻译】调试Rxjs（一）：工具/img/rxjs/5.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/【翻译】调试Rxjs（一）：工具/img/rxjs/6.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/【翻译】调试Rxjs（一）：工具/img/rxjs/7.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/【翻译】调试Rxjs（一）：工具/img/rxjs/8.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/【翻译】调试Rxjs（一）：工具/img/rxjs/9.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/【翻译】调试Rxjs（一）：工具/img/rxjs/10.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/【翻译】调试Rxjs（一）：工具/img/rxjs/11.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/【翻译】调试Rxjs（一）：工具/img/rxjs/12.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/【翻译】调试Rxjs（一）：工具/img/rxjs/13.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/【翻译】调试Rxjs（一）：工具/img/rxjs/14.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/【翻译】调试Rxjs（一）：工具/img/rxjs/15.png">
-<meta property="og:updated_time" content="2018-11-19T12:39:46.970Z">
+<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/1.png">
+<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/2.png">
+<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/3.png">
+<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/4.png">
+<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/5.png">
+<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/6.png">
+<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/7.png">
+<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/8.png">
+<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/9.png">
+<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/10.png">
+<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/11.png">
+<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/12.png">
+<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/13.png">
+<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/14.png">
+<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/15.png">
+<meta property="og:updated_time" content="2018-11-19T12:41:43.410Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【翻译】调试Rxjs（一）：工具">
 <meta name="twitter:description" content="[翻译] 调试Rxjs（一）：工具 原文：Debugging RxJS, Part 1: Tooling  我是一个 Rxjs 的信仰者，我在我所有的项目中都使用 Rxjs。有了 Rxjs，我发现很多曾经觉得乏味的事都变得痛快。但是有一件事不是这样：调试。 Rxjs 中异步的本质在组合之后让调试变得更具挑战性：没有太多的状态（state）供你检查，并且调用堆栈（call stack）也帮不了太大的">
-<meta name="twitter:image" content="http://tanyibing.com/2018/11/19/【翻译】调试Rxjs（一）：工具/img/rxjs/1.png">
+<meta name="twitter:image" content="http://tanyibing.com/2018/11/19/img/rxjs/1.png">
     
         <link rel="alternate" type="application/atom+xml" title="Ice Panpan&#39;s blog" href="/atom.xml">
     
@@ -256,7 +256,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="./img/rxjs/1.png" alt="Console_1" title="">
+                    <img src="../img/rxjs/1.png" alt="Console_1" title="">
                 </div>
                 <div class="image-caption">Console_1</div>
             </figure>
@@ -264,7 +264,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="./img/rxjs/2.png" alt="Console_2" title="">
+                    <img src="../img/rxjs/2.png" alt="Console_2" title="">
                 </div>
                 <div class="image-caption">Console_2</div>
             </figure>
@@ -272,7 +272,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="./img/rxjs/3.png" alt="Console_3" title="">
+                    <img src="../img/rxjs/3.png" alt="Console_3" title="">
                 </div>
                 <div class="image-caption">Console_3</div>
             </figure>
@@ -282,7 +282,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="./img/rxjs/4.png" alt="Console_4" title="">
+                    <img src="../img/rxjs/4.png" alt="Console_4" title="">
                 </div>
                 <div class="image-caption">Console_4</div>
             </figure>
@@ -290,7 +290,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="./img/rxjs/5.png" alt="Console_5" title="">
+                    <img src="../img/rxjs/5.png" alt="Console_5" title="">
                 </div>
                 <div class="image-caption">Console_5</div>
             </figure>
@@ -298,7 +298,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="./img/rxjs/6.png" alt="Console_6" title="">
+                    <img src="../img/rxjs/6.png" alt="Console_6" title="">
                 </div>
                 <div class="image-caption">Console_6</div>
             </figure>
@@ -306,7 +306,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="./img/rxjs/7.png" alt="Console_7" title="">
+                    <img src="../img/rxjs/7.png" alt="Console_7" title="">
                 </div>
                 <div class="image-caption">Console_7</div>
             </figure>
@@ -314,7 +314,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="./img/rxjs/8.png" alt="Console_8" title="">
+                    <img src="../img/rxjs/8.png" alt="Console_8" title="">
                 </div>
                 <div class="image-caption">Console_8</div>
             </figure>
@@ -322,7 +322,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="./img/rxjs/9.png" alt="Console_9" title="">
+                    <img src="../img/rxjs/9.png" alt="Console_9" title="">
                 </div>
                 <div class="image-caption">Console_9</div>
             </figure>
@@ -330,7 +330,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="./img/rxjs/10.png" alt="Console_10" title="">
+                    <img src="../img/rxjs/10.png" alt="Console_10" title="">
                 </div>
                 <div class="image-caption">Console_10</div>
             </figure>
@@ -338,7 +338,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="./img/rxjs/11.png" alt="Console_11" title="">
+                    <img src="../img/rxjs/11.png" alt="Console_11" title="">
                 </div>
                 <div class="image-caption">Console_11</div>
             </figure>
@@ -346,7 +346,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="./img/rxjs/12.png" alt="Console_12" title="">
+                    <img src="../img/rxjs/12.png" alt="Console_12" title="">
                 </div>
                 <div class="image-caption">Console_12</div>
             </figure>
@@ -354,7 +354,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="./img/rxjs/13.png" alt="Console_13" title="">
+                    <img src="../img/rxjs/13.png" alt="Console_13" title="">
                 </div>
                 <div class="image-caption">Console_13</div>
             </figure>
@@ -362,7 +362,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="./img/rxjs/14.png" alt="Console_14" title="">
+                    <img src="../img/rxjs/14.png" alt="Console_14" title="">
                 </div>
                 <div class="image-caption">Console_14</div>
             </figure>
@@ -370,7 +370,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="./img/rxjs/15.png" alt="Console_15" title="">
+                    <img src="../img/rxjs/15.png" alt="Console_15" title="">
                 </div>
                 <div class="image-caption">Console_15</div>
             </figure>
@@ -387,7 +387,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-11-19T12:39:46.970Z" itemprop="dateUpdated">2018-11-19 20:39:46</time>
+    最后更新时间：<time datetime="2018-11-19T12:41:43.410Z" itemprop="dateUpdated">2018-11-19 20:41:43</time>
 </span><br>
 
 
