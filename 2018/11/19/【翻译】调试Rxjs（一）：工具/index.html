@@ -28,26 +28,26 @@
 <meta property="og:site_name" content="Ice Panpan&#39;s blog">
 <meta property="og:description" content="[翻译] 调试Rxjs（一）：工具 原文：Debugging RxJS, Part 1: Tooling  我是一个 Rxjs 的信仰者，我在我所有的项目中都使用 Rxjs。有了 Rxjs，我发现很多曾经觉得乏味的事都变得痛快。但是有一件事不是这样：调试。 Rxjs 中异步的本质在组合之后让调试变得更具挑战性：没有太多的状态（state）供你检查，并且调用堆栈（call stack）也帮不了太大的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/1.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/2.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/3.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/4.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/5.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/6.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/7.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/8.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/9.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/10.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/11.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/12.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/13.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/14.png">
-<meta property="og:image" content="http://tanyibing.com/2018/11/19/img/rxjs/15.png">
-<meta property="og:updated_time" content="2018-11-19T12:43:06.284Z">
+<meta property="og:image" content="http://tanyibing.com/img/rxjs/1.png">
+<meta property="og:image" content="http://tanyibing.com/img/rxjs/2.png">
+<meta property="og:image" content="http://tanyibing.com/img/rxjs/3.png">
+<meta property="og:image" content="http://tanyibing.com/img/rxjs/4.png">
+<meta property="og:image" content="http://tanyibing.com/img/rxjs/5.png">
+<meta property="og:image" content="http://tanyibing.com/img/rxjs/6.png">
+<meta property="og:image" content="http://tanyibing.com/img/rxjs/7.png">
+<meta property="og:image" content="http://tanyibing.com/img/rxjs/8.png">
+<meta property="og:image" content="http://tanyibing.com/img/rxjs/9.png">
+<meta property="og:image" content="http://tanyibing.com/img/rxjs/10.png">
+<meta property="og:image" content="http://tanyibing.com/img/rxjs/11.png">
+<meta property="og:image" content="http://tanyibing.com/img/rxjs/12.png">
+<meta property="og:image" content="http://tanyibing.com/img/rxjs/13.png">
+<meta property="og:image" content="http://tanyibing.com/img/rxjs/14.png">
+<meta property="og:image" content="http://tanyibing.com/img/rxjs/15.png">
+<meta property="og:updated_time" content="2018-11-19T12:58:01.293Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【翻译】调试Rxjs（一）：工具">
 <meta name="twitter:description" content="[翻译] 调试Rxjs（一）：工具 原文：Debugging RxJS, Part 1: Tooling  我是一个 Rxjs 的信仰者，我在我所有的项目中都使用 Rxjs。有了 Rxjs，我发现很多曾经觉得乏味的事都变得痛快。但是有一件事不是这样：调试。 Rxjs 中异步的本质在组合之后让调试变得更具挑战性：没有太多的状态（state）供你检查，并且调用堆栈（call stack）也帮不了太大的">
-<meta name="twitter:image" content="http://tanyibing.com/2018/11/19/img/rxjs/1.png">
+<meta name="twitter:image" content="http://tanyibing.com/img/rxjs/1.png">
     
         <link rel="alternate" type="application/atom+xml" title="Ice Panpan&#39;s blog" href="/atom.xml">
     
@@ -195,7 +195,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#翻译-调试Rxjs（一）：工具"><span class="post-toc-number">1.</span> <span class="post-toc-text">[翻译] 调试Rxjs（一）：工具</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#核心概念"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">核心概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更多信息"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">更多信息</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#翻译-调试Rxjs（一）：工具"><span class="post-toc-number">1.</span> <span class="post-toc-text">[翻译] 调试Rxjs（一）：工具</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#核心概念"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">核心概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#控制台API功能"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">控制台API功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更多信息"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">更多信息</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -250,14 +250,18 @@
 </ol>
 <p>考虑到这些功能，我建立了 <code>rxjs-spy</code>。</p>
 <h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><p><code>rxjs-spy</code> 引入了 <code>tag</code> 操作符，将字符串标记与 <code>Observable</code> 相关联。这个操作符不会以任何方式更改 <code>Observable</code> 的行为或值。</p>
-<p><code>tag</code> 操作符可以被单独导入：</p>
-<figure class="highlight js"><figcaption><span>import "rxjs-spy/add/operator/tag"``` </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">并且其他的 <span class="string">`rxjs-spy`</span> 方法可以在生产环境下省略，所以唯一的开销就是字符串注释。</span><br><span class="line"></span><br><span class="line">大多数工具的方法接受匹配器，以确定它们将应用于哪些标记的 <span class="string">`Observable`</span> 。匹配器可以是传递标签本身的简单字符串，正则表达式或谓词。</span><br><span class="line"></span><br><span class="line">通过调用 <span class="string">`spy`</span> 来配置工具时，它会修改 <span class="string">`Observable.prototype.subscribe`</span> 来监听所有的 <span class="string">`subscriptions`</span>, <span class="string">`notifications `</span> 和 <span class="string">`unsubscriptions`</span>。这也就是意味着，只有已经被订阅的 <span class="string">`Observable`</span> 才会被监听。</span><br><span class="line"></span><br><span class="line"><span class="string">`rxjs-spy`</span> 公开了一个旨在从代码中调用的模块API和一个用于在浏览器控制台中交互使用的控制台API。大多数时候，我早早地在应用程序启动代码里条用模块API的方法，并使用控制台API进行剩余的调试。</span><br><span class="line"></span><br><span class="line">## 控制台API功能</span><br><span class="line">在调试时，我通常使用浏览器的控制台来检查和操作标记的 <span class="string">`Observables`</span>。控制台API功能最容易通过示例解释：</span><br><span class="line"></span><br><span class="line"><span class="string">``</span><span class="string">`js</span></span><br><span class="line"><span class="string">import &#123; Observable &#125; from "rxjs/Observable";</span></span><br><span class="line"><span class="string">import &#123; spy &#125; from "rxjs-spy";</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">import "rxjs/add/observable/interval";</span></span><br><span class="line"><span class="string">import "rxjs/add/operator/map";</span></span><br><span class="line"><span class="string">import "rxjs/add/operator/mapTo";</span></span><br><span class="line"><span class="string">import "rxjs-spy/add/operator/tag";</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">spy();</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">const interval = new Observable</span></span><br><span class="line"><span class="string">  .interval(2000)</span></span><br><span class="line"><span class="string">  .tag("interval");</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">const people = interval</span></span><br><span class="line"><span class="string">  .map((value) =&gt; &#123;</span></span><br><span class="line"><span class="string">    const names = ["alice", "bob"];</span></span><br><span class="line"><span class="string">    return names[value % names.length];</span></span><br><span class="line"><span class="string">  &#125;)</span></span><br><span class="line"><span class="string">  .tag("people")</span></span><br><span class="line"><span class="string">  .subscribe();</span></span><br></pre></td></tr></table></figure>
+<p><code>tag</code> 操作符可以被单独导入： <code>import &quot;rxjs-spy/add/operator/tag&quot;</code>。并且其他的 <code>rxjs-spy</code> 方法可以在生产环境下省略，所以唯一的开销就是字符串注释。</p>
+<p>大多数工具的方法接受匹配器，以确定它们将应用于哪些标记的 <code>Observable</code> 。匹配器可以是传递标签本身的简单字符串，正则表达式或谓词。</p>
+<p>通过调用 <code>spy</code> 来配置工具时，它会修改 <code>Observable.prototype.subscribe</code> 来监听所有的 <code>subscriptions</code>, <code>notifications</code> 和 <code>unsubscriptions</code>。这也就是意味着，只有已经被订阅的 <code>Observable</code> 才会被监听。</p>
+<p><code>rxjs-spy</code> 公开了一个旨在从代码中调用的模块API和一个用于在浏览器控制台中交互使用的控制台API。大多数时候，我早早地在应用程序启动代码里条用模块API的方法，并使用控制台API进行剩余的调试。</p>
+<h2 id="控制台API功能"><a href="#控制台API功能" class="headerlink" title="控制台API功能"></a>控制台API功能</h2><p>在调试时，我通常使用浏览器的控制台来检查和操作标记的 <code>Observables</code>。控制台API功能最容易通过示例解释：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Observable &#125; <span class="keyword">from</span> <span class="string">"rxjs/Observable"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; spy &#125; <span class="keyword">from</span> <span class="string">"rxjs-spy"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"rxjs/add/observable/interval"</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">"rxjs/add/operator/map"</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">"rxjs/add/operator/mapTo"</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">"rxjs-spy/add/operator/tag"</span>;</span><br><span class="line"></span><br><span class="line">spy();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> interval = <span class="keyword">new</span> Observable</span><br><span class="line">  .interval(<span class="number">2000</span>)</span><br><span class="line">  .tag(<span class="string">"interval"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> people = interval</span><br><span class="line">  .map(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> names = [<span class="string">"alice"</span>, <span class="string">"bob"</span>];</span><br><span class="line">    <span class="keyword">return</span> names[value % names.length];</span><br><span class="line">  &#125;)</span><br><span class="line">  .tag(<span class="string">"people"</span>)</span><br><span class="line">  .subscribe();</span><br></pre></td></tr></table></figure>
 <p><code>rxjs-spy</code> 中的控制台API通过 <code>rxSpy</code> 在全局暴露。</p>
 <p>调用 <code>rxSpy.show()</code> 将显示所有已经被标记的 <code>Observable</code> 的列表，指示其状态（<code>incomplete</code>，<code>complete</code> 或者 <code>errored</code>），订阅者（<code>subscribers</code>）的数量和最近发出的值（如果已经发出一个值）。控制台输出将如下所示：</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../img/rxjs/1.png" alt="Console_1" title="">
+                    <img src="/img/rxjs/1.png" alt="Console_1" title="">
                 </div>
                 <div class="image-caption">Console_1</div>
             </figure>
@@ -265,7 +269,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../img/rxjs/2.png" alt="Console_2" title="">
+                    <img src="/img/rxjs/2.png" alt="Console_2" title="">
                 </div>
                 <div class="image-caption">Console_2</div>
             </figure>
@@ -273,7 +277,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../img/rxjs/3.png" alt="Console_3" title="">
+                    <img src="/img/rxjs/3.png" alt="Console_3" title="">
                 </div>
                 <div class="image-caption">Console_3</div>
             </figure>
@@ -283,7 +287,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../img/rxjs/4.png" alt="Console_4" title="">
+                    <img src="/img/rxjs/4.png" alt="Console_4" title="">
                 </div>
                 <div class="image-caption">Console_4</div>
             </figure>
@@ -291,7 +295,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../img/rxjs/5.png" alt="Console_5" title="">
+                    <img src="/img/rxjs/5.png" alt="Console_5" title="">
                 </div>
                 <div class="image-caption">Console_5</div>
             </figure>
@@ -299,7 +303,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../img/rxjs/6.png" alt="Console_6" title="">
+                    <img src="/img/rxjs/6.png" alt="Console_6" title="">
                 </div>
                 <div class="image-caption">Console_6</div>
             </figure>
@@ -307,7 +311,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../img/rxjs/7.png" alt="Console_7" title="">
+                    <img src="/img/rxjs/7.png" alt="Console_7" title="">
                 </div>
                 <div class="image-caption">Console_7</div>
             </figure>
@@ -315,7 +319,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../img/rxjs/8.png" alt="Console_8" title="">
+                    <img src="/img/rxjs/8.png" alt="Console_8" title="">
                 </div>
                 <div class="image-caption">Console_8</div>
             </figure>
@@ -323,7 +327,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../img/rxjs/9.png" alt="Console_9" title="">
+                    <img src="/img/rxjs/9.png" alt="Console_9" title="">
                 </div>
                 <div class="image-caption">Console_9</div>
             </figure>
@@ -331,7 +335,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../img/rxjs/10.png" alt="Console_10" title="">
+                    <img src="/img/rxjs/10.png" alt="Console_10" title="">
                 </div>
                 <div class="image-caption">Console_10</div>
             </figure>
@@ -339,7 +343,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../img/rxjs/11.png" alt="Console_11" title="">
+                    <img src="/img/rxjs/11.png" alt="Console_11" title="">
                 </div>
                 <div class="image-caption">Console_11</div>
             </figure>
@@ -347,7 +351,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../img/rxjs/12.png" alt="Console_12" title="">
+                    <img src="/img/rxjs/12.png" alt="Console_12" title="">
                 </div>
                 <div class="image-caption">Console_12</div>
             </figure>
@@ -355,7 +359,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../img/rxjs/13.png" alt="Console_13" title="">
+                    <img src="/img/rxjs/13.png" alt="Console_13" title="">
                 </div>
                 <div class="image-caption">Console_13</div>
             </figure>
@@ -363,7 +367,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../img/rxjs/14.png" alt="Console_14" title="">
+                    <img src="/img/rxjs/14.png" alt="Console_14" title="">
                 </div>
                 <div class="image-caption">Console_14</div>
             </figure>
@@ -371,7 +375,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="../img/rxjs/15.png" alt="Console_15" title="">
+                    <img src="/img/rxjs/15.png" alt="Console_15" title="">
                 </div>
                 <div class="image-caption">Console_15</div>
             </figure>
@@ -388,7 +392,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-11-19T12:43:06.284Z" itemprop="dateUpdated">2018-11-19 20:43:06</time>
+    最后更新时间：<time datetime="2018-11-19T12:58:01.293Z" itemprop="dateUpdated">2018-11-19 20:58:01</time>
 </span><br>
 
 
